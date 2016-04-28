@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+	<title>fullPage</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.6/jquery.fullPage.css">
+	<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+
+	<style>
+	body{margin: 0; padding: 0;}
+	h1{margin: 0;}
+	.section1{
+		background: url(resources/img/hero_sunset_large_2x.jpg) no-repeat center;
+		background-size: 100%;
+	}
+	.section1 h1{color: #fff; }
+	.section1 p{color: #fff; }
+	.section2{
+		background: url(resources/img/technology_hero_large_2x.jpg) no-repeat center;
+		background-size: 102%;
+	}
+	.section3{
+		background: url(resources/img/timekeeping_hero_large_2x.jpg) no-repeat center;
+		background-size: 33%;
+		background-position: 50% 449%;
+	}
+	.section4{
+		
+	}
+	.watch-size{
+		width: 200px;
+	}
+	.section4 .thumbnail{
+		background-color: #F2F2F2;
+	}
+	</style>
+
+</head>
+<body>
+	
+	<div id="fullpage">
+		<div class="section section1">
+			<article>
+				<h1>它终于来了</h1>
+				<p>收取并即时回应各种通知，追踪每天的运动情况，动动嘴就能控制音乐播放，还能随时展开体能训练。有了 Apple Watch，只需轻抬手腕，各种重要信息和功能就尽在掌握。</p>
+				<a href="##">进一步了解</a>
+			</article>
+		</div>
+		
+		<div class="section section2">
+			<article>
+				<h1>真正与你贴近的移动设备</h1>
+
+				<a href="##">进一步了解</a>
+			</article>
+		</div>
+		<div class="section section3">
+			<article>
+				<h1>非同一般的精准计时</h1>
+				<p>正因为每个人都是独一无二的，你的穿戴将更好地展现你的个性。因此，Apple Watch 的设计充分兼顾了各种喜好和风格。你可以根据场合与心情来更换表带和表盘，让你的个人风格更加鲜明。随时，如你所想。</p>
+				<a href="##">进一步了解</a>
+			</article>
+		</div>
+		
+		<div class="section section4">
+			<article class="container">
+				<h1>在三个特点鲜明的系列中找你的风格</h1>
+				<div class="row">
+					<div class="col-sm-6 col-md-4">
+						<div class="thumbnail">
+							<img class="watch-size" src="resources/img/primary_large_2x.jpg" alt="...">		
+							<div class="caption">
+								<img src="resources/img/logo_collection_primary.svg" alt="">		
+								<p>不锈钢或深空黑色不锈钢表壳，蓝宝石水晶镜面，搭配多款时尚表带。</p>
+								<p>
+									<a href="#" role="button">了解更多</a>
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-6 col-md-4">
+						<div class="thumbnail">
+							<img class="watch-size" src="resources/img/primary_large_2x.jpg" alt="...">		
+							<div class="caption">
+								<img src="resources/img/logo_collection_primary.svg" alt="">		
+								<p>不锈钢或深空黑色不锈钢表壳，蓝宝石水晶镜面，搭配多款时尚表带。</p>
+								<p>
+									<a href="#" role="button">了解更多</a>
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-6 col-md-4">
+						<div class="thumbnail">
+							<img class="watch-size" src="resources/img/primary_large_2x.jpg" alt="...">		
+							<div class="caption">
+								<img src="resources/img/logo_collection_primary.svg" alt="">		
+								<p>不锈钢或深空黑色不锈钢表壳，蓝宝石水晶镜面，搭配多款时尚表带。</p>
+								<p>
+									<a href="#" role="button">了解更多</a>
+								</p>
+							</div>
+						</div>
+					</div>
+
+					
+
+				</div>
+			</article>
+		</div>
+		
+	</div>
+
+
+
+
+	
+
+<script src="resources/js/jquery.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.6/jquery.fullPage.js"></script>
+
+<script type="text/javascript">
+	$(function(){
+		$('#fullpage').fullpage({
+			verticalCentered:false,	//样式：居中
+			anchors:['page1','page2','page3','page4'],	//锚
+			navigation:true,	//右侧导航
+			navigationTooltips:['它终于来了','真正与你贴近的移动设备','非同一般的精准计时','在三个特点鲜明的系列中找你的风格'],	//导航的文字描述
+
+
+		});
+	})
+</script>
+</body>
+</html>

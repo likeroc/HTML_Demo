@@ -1,0 +1,610 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0051)http://www.cnblogs.com/youzhuxiaoyao/p/4502886.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>skrollr 中文教程 - 幽竹小妖 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="./skrollr 中文教程 - 幽竹小妖 - 博客园_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./skrollr 中文教程 - 幽竹小妖 - 博客园_files/bundle-summerGarden.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/youzhuxiaoyao/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/youzhuxiaoyao/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/youzhuxiaoyao/wlwmanifest.xml">
+<script src="./skrollr 中文教程 - 幽竹小妖 - 博客园_files/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'youzhuxiaoyao', cb_enable_mathjax=false;</script>
+<script src="./skrollr 中文教程 - 幽竹小妖 - 博客园_files/blog-common.js" type="text/javascript"></script><style type="text/css" adt="123"></style>
+<script>if(!document.URL.match(/^http:\/\/v\.baidu\.com|http:\/\/music\.baidu\.com|http:\/\/dnf\.duowan\.com|http:\/\/bbs\.duowan\.com|http:\/\/newgame\.duowan\.com|http:\/\/my\.tv\.sohu\.com/)){
+(function() {
+    Function.prototype.bind = function() {
+        var fn = this, args = Array.prototype.slice.call(arguments), obj = args.shift();
+        return function() {
+            return fn.apply(obj, args.concat(Array.prototype.slice.call(arguments)));
+        };
+    };
+    function A() {}
+    A.prototype = {
+        rules: {
+            /*'youku_loader': {
+                'find': /^http:\/\/static\.youku\.com\/.*(loader|player_.*)(_taobao)?\.swf/,
+                'replace': 'http://swf.adtchrome.com/loader.swf'
+            },
+            'youku_out': {
+                'find': /^http:\/\/player\.youku\.com\/player\.php\/.*sid\/(.*)/,
+                'replace': 'http://swf.adtchrome.com/loader.swf?VideoIDS=$1'
+            },*/
+            'pps_pps': {
+                'find': /^http:\/\/www\.iqiyi\.com\/player\/cupid\/common\/pps_flvplay_s\.swf/,
+                'replace': 'http://swf.adtchrome.com/pps_20140420.swf'
+            },
+            /*'iqiyi_1': {
+                'find': /^http:\/\/www\.iqiyi\.com\/player\/cupid\/common\/.+\.swf$/,
+                'replace': 'http://swf.adtchrome.com/iqiyi_20140624.swf'
+            },
+            'iqiyi_2': {
+                'find': /^http:\/\/www\.iqiyi\.com\/common\/flashplayer\/\d+\/.+\.swf$/,
+                'replace': 'http://swf.adtchrome.com/iqiyi_20140624.swf'
+            },*/
+            'ku6': {
+                'find': /^http:\/\/player\.ku6cdn\.com\/default\/.*\/\d+\/(v|player|loader)\.swf/,
+                'replace': 'http://swf.adtchrome.com/ku6_20140420.swf'
+            },
+            'ku6_topic': {
+                'find': /^http:\/\/player\.ku6\.com\/inside\/(.*)\/v\.swf/,
+                'replace': 'http://swf.adtchrome.com/ku6_20140420.swf?vid=$1'
+            },
+            'sohu': {
+                'find': /^http:\/\/tv\.sohu\.com\/upload\/swf(\/p2p)?\/\d+\/Main\.swf/,
+                'replace': 'http://www.adtchrome.com/sohu/sohu_20150104.swf'
+            },
+            'sohu2':{
+                'find':/^http:\/\/[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\/testplayer\/Main0?\.swf/,
+                'replace':'http://www.adtchrome.com/sohu/sohu_20150104.swf'
+            },
+            'sohu_share': {
+                'find': /^http:\/\/share\.vrs\.sohu\.com\/my\/v\.swf&/,
+                'replace': 'http://www.adtchrome.com/sohu/sohu_20150104.swf?'
+            },
+            'sohu_sogou' : {
+                'find': /^http:\/\/share\.vrs\.sohu\.com\/(\d+)\/v\.swf/,
+                'replace': 'http://www.adtchrome.com/sohu/sohu_20150104.swf?vid=$1'
+            },
+            /*'letv': {
+                'find': /^http:\/\/player\.letvcdn\.com\/.*p\/.*\/newplayer\/LetvPlayer\.swf/,
+                'replace': 'http://swf.adtchrome.com/20150110_letv.swf'
+            },
+            'letv_topic': {
+                'find': /^http:\/\/player\.hz\.letv\.com\/hzplayer\.swf\/v_list=zhuanti/,
+                'replace': 'http://swf.adtchrome.com/20150110_letv.swf'
+            },
+            'letv_duowan': {
+                'find': /^http:\/\/assets\.dwstatic\.com\/video\/vpp\.swf/,
+                'replace': 'http://yuntv.letv.com/bcloud.swf'
+            },*/
+            '17173_in':{
+                'find':/http:\/\/f\.v\.17173cdn\.com\/(\d+\/)?flash\/PreloaderFile(Customer)?\.swf/,
+                'replace':"http://swf.adtchrome.com/17173_in_20150522.swf"
+            },
+            '17173_out':{
+                'find':/http:\/\/f\.v\.17173cdn\.com\/(\d+\/)?flash\/PreloaderFileFirstpage\.swf/,
+                'replace':"http://swf.adtchrome.com/17173_out_20150522.swf"
+            },
+            '17173_live':{
+                'find':/http:\/\/f\.v\.17173cdn\.com\/(\d+\/)?flash\/Player_stream(_firstpage)?\.swf/,
+                'replace':"http://swf.adtchrome.com/17173_stream_20150522.swf"
+            },
+            '17173_live_out':{
+                'find':/http:\/\/f\.v\.17173cdn\.com\/(\d+\/)?flash\/Player_stream_(custom)?Out\.swf/,
+                'replace':"http://swf.adtchrome.com/17173.out.Live.swf"
+            }
+        },
+        _done: null,
+        get done() {
+            if(!this._done) {
+                this._done = new Array();
+            }
+            return this._done;
+        },
+        addAnimations: function() {
+            var style = document.createElement('style');
+            style.type = 'text/css';
+            style.innerHTML = 'object,embed{\
+                -webkit-animation-duration:.001s;-webkit-animation-name:playerInserted;\
+                -ms-animation-duration:.001s;-ms-animation-name:playerInserted;\
+                -o-animation-duration:.001s;-o-animation-name:playerInserted;\
+                animation-duration:.001s;animation-name:playerInserted;}\
+                @-webkit-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}\
+                @-ms-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}\
+                @-o-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}\
+                @keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}';
+            document.getElementsByTagName('head')[0].appendChild(style);
+        },
+        animationsHandler: function(e) {
+            if(e.animationName === 'playerInserted') {
+                this.replace(e.target);
+            }
+        },
+        replace: function(elem) {
+            if(this.done.indexOf(elem) != -1) return;
+            this.done.push(elem);
+            var player = elem.data || elem.src;
+            if(!player) return;
+            var i, find, replace = false;
+            for(i in this.rules) {
+                find = this.rules[i]['find'];
+                if(find.test(player)) {
+                    replace = this.rules[i]['replace'];
+                    if('function' === typeof this.rules[i]['preHandle']) {
+                        this.rules[i]['preHandle'].bind(this, elem, find, replace, player)();
+                    }else{
+                        this.reallyReplace.bind(this, elem, find, replace)();
+                    }
+                    break;
+                }
+            }
+        },
+        reallyReplace: function(elem, find, replace) {
+            elem.data && (elem.data = elem.data.replace(find, replace)) || elem.src && ((elem.src = elem.src.replace(find, replace)) && (elem.style.display = 'block'));
+            var b = elem.querySelector("param[name='movie']");
+            this.reloadPlugin(elem);
+        },
+        reloadPlugin: function(elem) {
+            var nextSibling = elem.nextSibling;
+            var parentNode = elem.parentNode;
+            parentNode.removeChild(elem);
+            var newElem = elem.cloneNode(true);
+            this.done.push(newElem);
+            if(nextSibling) {
+                parentNode.insertBefore(newElem, nextSibling);
+            } else {
+                parentNode.appendChild(newElem);
+            }
+        },
+        init: function() {
+            var desc = navigator.mimeTypes['application/x-shockwave-flash'].description.toLowerCase();
+            /*if(desc.indexOf('adobe')>-1){
+                delete this.rules["iqiyi_1"];
+                delete this.rules["iqiyi_2"];
+            }*/
+            if(document.URL.indexOf('tv.sohu.com')<=0){
+                delete this.rules["sohu"];
+            }
+            var handler = this.animationsHandler.bind(this);
+            document.body.addEventListener('webkitAnimationStart', handler, false);
+            document.body.addEventListener('msAnimationStart', handler, false);
+            document.body.addEventListener('oAnimationStart', handler, false);
+            document.body.addEventListener('animationstart', handler, false);
+            this.addAnimations();
+        }
+    };
+    new A().init();
+})();
+}
+// 20140730
+(function cnbeta() {
+    if (document.URL.indexOf('cnbeta.com') >= 0) {
+        var elms = document.body.querySelectorAll("p>embed");
+        Array.prototype.forEach.call(elms, function(elm) {
+            elm.style.marginLeft = "0px";
+        });
+    }
+})();
+// 20150108
+setTimeout(function(){
+    if (document.URL.indexOf('www.baidu.com') >= 0) {
+        var a = function(){
+            Array.prototype.forEach.call(document.body.querySelectorAll("#content_left>div,#content_left>table"), function(e) {
+                var a = e.getAttribute("style");
+                if(a && /display:(table|block)\s!important/.test(a)){
+                    e.removeAttribute("style")
+                }
+            });
+        };
+        a();
+        document.getElementById("su").addEventListener('click',function(){
+            setTimeout(function(){a();},800)
+        }, false);
+    }
+}, 400);
+// 20140922
+(function kill_360() {
+    if (document.URL.indexOf('so.com') >= 0) {
+        document.getElementById("e_idea_pp").style.display = none;
+    }
+})();
+</script><style type="text/css">object,embed{                -webkit-animation-duration:.001s;-webkit-animation-name:playerInserted;                -ms-animation-duration:.001s;-ms-animation-name:playerInserted;                -o-animation-duration:.001s;-o-animation-name:playerInserted;                animation-duration:.001s;animation-name:playerInserted;}                @-webkit-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @-ms-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @-o-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}</style></head>
+<body>
+<a name="top"></a>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/youzhuxiaoyao/"><img id="blogLogo" src="./skrollr 中文教程 - 幽竹小妖 - 博客园_files/logo.gif" alt="返回主页"></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/youzhuxiaoyao/">幽竹小妖</a></h1>
+<h2></h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+	<li><a id="MyLinks1_HomeLink" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+	<li><a id="MyLinks1_MyHomeLink" class="menu" href="http://www.cnblogs.com/youzhuxiaoyao/">首页</a></li>
+	<li><a href="http://news.cnblogs.com/">新闻</a></li>
+	<li><a id="MyLinks1_NewPostLink" class="menu" rel="nofollow" href="http://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+	<li><a id="MyLinks1_ContactLink" accesskey="9" class="menu" rel="nofollow" href="http://msg.cnblogs.com/send/%E5%B9%BD%E7%AB%B9%E5%B0%8F%E5%A6%96">联系</a></li>
+	<li><a id="MyLinks1_Admin" class="menu" rel="nofollow" href="http://i.cnblogs.com/">管理</a></li>
+	<li><a id="MyLinks1_Syndication" class="menu" href="http://www.cnblogs.com/youzhuxiaoyao/rss">订阅</a>
+	<a id="MyLinks1_XMLLink" class="aHeaderXML" href="http://www.cnblogs.com/youzhuxiaoyao/rss"><img src="./skrollr 中文教程 - 幽竹小妖 - 博客园_files/xml.gif" alt="订阅"></a></li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			
+<!--done-->
+随笔- 8&nbsp;
+文章- 1&nbsp;
+评论- 0&nbsp;
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="./skrollr 中文教程 - 幽竹小妖 - 博客园_files/skrollr 中文教程 - 幽竹小妖 - 博客园.html">skrollr 中文教程</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body"><h1><span style="font-family: Microsoft YaHei;">skrollr 0.6.29</span></h1>
+<p class="ordinary-output target-output"><span style="font-family: Microsoft YaHei;">skrollr是一个单独的视差滚动的JavaScript库，移动端（Android，iOS，等）和pc都可以使用，压缩后大小仅仅不到12K</span></p>
+<p class="ordinary-output target-output"><span style="font-family: Microsoft YaHei;">&nbsp;</span></p>
+<h2 class="ordinary-output target-output"><span style="font-family: Microsoft YaHei;"><strong>使用方法</strong></span></h2>
+<p class="ordinary-output target-output"><span style="font-size: 16px; font-family: Microsoft YaHei;">首先你需要引入<code>skrollr.min.js</code>文件，然后在文档加载完成后调用<code>init()</code>函数</span></p>
+<p class="ordinary-output target-output"><span style="font-size: 16px; font-family: Microsoft YaHei;">&lt;script type="text/javascript" src="skrollr.min.js"&gt;&lt;/script&gt;<br>&nbsp;&nbsp;&nbsp; &lt;script type="text/javascript"&gt;<br>&nbsp;&nbsp;&nbsp; var s = skrollr.init();<br>&nbsp;&nbsp;&nbsp; &lt;/script&gt;<br>&lt;/body&gt;</span></p>
+<p class="ordinary-output target-output"><span style="font-family: Microsoft YaHei;"><strong><span style="font-size: 16px;">改变背景的例子，当滚动条在顶部的时候颜色是<span style="font-size: 16px;">rgb(0,0,255)</span>。当滚动500px颜色是<span style="font-size: 16px;">rgb(255,0,0)</span>，你只需要写出关键帧的状态，skrollr会自己添加过度帧。</span></strong></span></p>
+<p class="ordinary-output target-output"><span style="font-size: 16px; font-family: Microsoft YaHei;">&lt;div data-0="background-color:rgb(0,0,255);" data-500="background-color:rgb(255,0,0);"&gt;WOOOT&lt;/div&gt;</span></p>
+<p class="ordinary-output target-output"><span style="font-size: 16px; font-family: Microsoft YaHei;"><a href="http://prinzhorn.github.io/skrollr/examples/docu/1.html">View in browser</a></span></p>
+<p class="ordinary-output target-output"><span style="font-family: Microsoft YaHei;">默认情况下skrollr认为页面可以滚动到500px急即使你的页面长度不够500，如果想阻止这种情况发生只要使用forceHeight属性就可以默认是true，将其设为false就可以阻止：</span></p>
+<p class="ordinary-output target-output"><span style="font-family: Microsoft YaHei;">skrollr.init({</span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<span style="color: #ff0000;">forceHeight: false,</span></span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;easing: {</span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;vibrate: function(p) {</span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return Math.sin(p * 10 * Math.PI);</span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}</span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}</span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp; &nbsp;});</span></p>
+<p class="ordinary-output target-output"><span style="font-family: Microsoft YaHei;">最好不要使用#00f或者#0000ff，最好使用rgb或者hsl因为他们会导致不一样的动画效果，通常情况下hsl会更加酷炫。（这里美人也没看太懂，试了试16禁止的颜色也是有效果的）</span></p>
+<p class="ordinary-output target-output"><span style="font-family: Microsoft YaHei;">&lt;div style="line-height:30px;font-size:20px;background:#ccc;" data-0=<span style="color: #ff0000;">"transform:rotate(0deg);</span>" data-500="transform:rotate(90deg);"&gt;&lt;/div&gt;测试了一下红色部分必须带单位，否则不会出现中间的过渡动画</span></p>
+<p class="ordinary-output target-output"><span style="font-family: Microsoft YaHei;"><strong>现在让我们给上个例子添加旋转动画吧</strong></span></p>
+<p class="ordinary-output target-output"><span style="font-family: Microsoft YaHei;">&lt;div data-0="background-color:rgb(0,0,255);transform:rotate(0deg);" data-500="background-color:rgb(255,0,0);transform:rotate(360deg);"&gt;WOOOT&lt;/div&gt;</span></p>
+<p class="ordinary-output target-output"><span style="font-family: Microsoft YaHei;"><a href="http://prinzhorn.github.io/skrollr/examples/docu/2.html">View in browser</a></span></p>
+<p class="ordinary-output target-output"><span style="font-family: Microsoft YaHei;">skrollr为你处理所有这些讨厌的CSS前缀。</span></p>
+<p class="ordinary-output target-output"><span style="font-family: Microsoft YaHei;">skrollr允许非线性动画，你可以吧所谓的easing function放到属性后面的 方括号里面，还可以的通过easings 参数自定义运动函数：</span></p>
+<p class="ordinary-output target-output"><span style="font-family: Microsoft YaHei;">&lt;div data-0="background-color:rgb(0,0,255);transform[bounce]:rotate(0deg);" data-top="background-color:rgb(255,0,0);transform[bounce]:rotate(360deg);"&gt;WOOOT&lt;/div&gt;</span></p>
+<p class="ordinary-output target-output"><span style="font-family: Microsoft YaHei;"><a href="http://prinzhorn.github.io/skrollr/examples/docu/4.html">View in browser</a></span></p>
+<h3 class="ordinary-output target-output"><span style="font-family: Microsoft YaHei;">从skrollr 0.6.0开始支持移动端</span></h3>
+<h2><span style="font-family: Microsoft YaHei;">两个模式 absolute mode和relative mode</span></h2>
+<p><span style="font-family: Microsoft YaHei;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAgAAAJRCAIAAABHqhJIAAAgAElEQVR4nOzd/6sc953n+8+fsLDYpCDEmF72B3N+CMhiHYNDQ6CHiz04wWiGGKbHnNEdYbRhHO24mRPvjs2ujXen0Jkd5NyMvLdYKUFEONSsyCo7kTy99npO8J6ktdq9vqJvb7yxODrpTRAnomkicTg0dX+o/t7Vre6uT9X7XVXPB58fbJ3uOnU+r/p86vM+XVXHnJr0/e9/3xjzewAAAACKxFAYAAAAAKAwAAAAAEBhAAAAAGCZwiAAAAAAkHcUBgAAAAAoDAAAAABQGAAAAAAIKAwAAAAABBQGAAAAAAIKAwAAAAABhQEAAACGbu51aek06agjUBgAAACgT3y5XJwmHXUECgMAAAD0iS+Xi9Oko45AYQAAAIA+8eVycZp01BEoDAAAANAnvlwuTpOOOgKFAQAAAPrEl8vFadJRR6AwAAAAQJ/4crk4TTrqCBQGAAAA6BNfLhenSUcdgcIgG3otr2KGjtXqd5d42RSnXHv3SqPdi3pft/WB79XKoxdvVN1Lc14cOmw3fvQDt+os8ZbRXjlb9c78TQa9Tn2rv8GK15p+4YOWd6K/mVq9EwRBr+lVxr7/XCe81oPxt8/nVLzmgv0DACD3xJfLxWnSUUegMMiE6UVtf2U8Y2FhMFi+e59MHomdprc5Z33tlLeuz670e+2d7erG3MV19Z3d9mH0XlEYAACgm/hyuThNOuoIFAZZMLsCnrPCXqIwGC6U++/oNrbLi168senfnvhO3V23/LDleHm70e1F7BWFAQAAuokvl4vTpKOOQGGQAaOFdeVfuGeOLVjCjr1yamHd67b8Wn9BP/7eu/Vaf4Pl2ncbg9/099q7F2qDEmNiNX+v4T47WEZvVF1/8JZet1X3aqOqZPwzjaQKg+l3D+uEyEutHvZ2AABAYUBhQGGg23BF61S8W/cWLZ0XFAZB9Mp4wWK6U685479xn9y+qWzV92e+//hVSVHvojAAAEA38eVycZp01BEoDNQbrXdPeK0Hkev10WuXKgwiPzEwTtX1F91tHEysrTf92bIgCMYvNBp9FwoDALLET//FadJRwwLxo6g4TTrqCBQG2s2s9UcX/8xeTTS/MDhsN77bv5TIOe3vD28OHluL9znl2ru+/6PG5A3EQfCQbz3zmtE+UBgAkCV++i9Ok44aFogfRcVp0lFHoDBQbvbX/ItWz8s8lWj6ZuLefn1rzpvKNa/eGh22D1l5T+3wqAzQVhjM9ZDdA5BV4qf/4jTpqGGB+FFUnCYddQQKA92mriMKja4mml4BP6wwcMo1r96aXVR3WnWvFv2sobHHm87/vmMoDACoI376L06TjhoWiB9FxWnSUUegMNBs3kJ57hJ5uceVPus27kV/v3bjiu9P/tmysdfziQGAbBI//RenSUcNC8SPouI06agjUBhoNna9/nJr2UU3H3db14cr/qgnGk0auych4u8GcI8BgCwRP/0Xp0lHDQvEj6LiNOmoI1AYKDa6dGeBiUXwwqcSzV6YtHitPLtMX+KpRKN9XuOpRItfSWEAYE3ip//iNOmoYYH4UVScJh11BAoDtWafFxQt+k+JLVUYjC/Exx9VFDrc909P/f5+7FKlmZuYg2Dyz5+t8XcMxuuK2eudHvZMJAoDAHOIn/6L06SjhgXiR1FxmnTUESgM1Br7CwNRC9nINf2iwqDXblyolacW6KPFtDHl2oXR3zHotK5vV2d+9z95ddPCv3w89pHCCoXBvP0Zvw5q3h0OFAYA5hA//RenSUcNC8SPouI06agjUBho9dBHAEVd8b/czcdO2d0dHIy9bmO7/JCXT36YMPoTZvOV36iP/RmEJfZq+DMu8TnJvBsk4t98vGDjALJM/PRfnCYdNSwQP4qK06SjjkBhoNPY+njub9nHVroRl/rMV95udMc32Gn5W+V5L3Y2veb0r9d77Z3t6sbcd1Tf2Z3842irFAZBEHSa3ubc2mCy5JjcLQoDANHET//FadJRwwLxo6g4TTrqCBQGOj3kOqLQ2IJ75p6BOWt29wcftLpR1+e3G1cmH1PqVN0f+NEvDoIgCA7bjR/53uDaJGOM2ai6l66MLkaK3M95ppbyvW7rg8mNG1OueZFbH72JwgBANPHTf3GadNSwQPwoKk6TjjoChQEAIOfET//FadJRwwLxo6g4TTrqCBQGAICcEz/9F6dJRw0LxI+i4jTpqCNQGAAAck789F+cJh01LBA/iorTpKOOQGEAAMg58dN/cZp01LBA/CgqTpOOOgKFAQAg58RP/8Vp0lHDAvGjqDhNOuoIFAYAgJwTP/0Xp0lHDQvEj6LiNOmoI1AYAAByTvz0X5wmHTUsED+KitOko45AYQAAyDnx039xGrmobeSisK04k6WBwgAAkHPip//iNHJR28hFYVtxJksDhQEAIOfET//FaeSitpGLwrbiTJYGCgMAQM6Jn/6L08hFbSMXhW3FmSwNFAYAgJwTP/0Xp5GL2kYuCtuKM1kaKAwAADknfvovTiMXtY1cFLYVZ7I0UBgAAHJO/PRfnEYuahu5KGwrzmRpoDAAAOSc+Om/OI1c1DZyUdhWnMnSQGEAAMg58dN/cRq5qG3korCtOJOlgcIAAJBz4qf/4jRyUdvIRWFbcSZLA4UBACDnxE//xWnkoraRi8K24kyWBgoDAEDOiZ/+i9PIRW0jF4VtxZksDRQGAICcEz/9F6eRi9pGLgrbijNZGigMAAA5J376L04jF7WNXBS2FWeyNFAYAAByTvz0X5xGLmobuShsK85kaaAwAADknPjpvziNXNQ2clHYVpzJ0kBhAADIOfHTf3Eauaht5KKwrTiTpYHCAACQc+Kn/+I0clHbyEVhW3EmSwOFAQAg58RP/8Vp5KK2kYvCtuJMlgYKAwBAzomf/ovTyEVtIxeFbcWZLA0UBgCAnBM//RenkYvaRi4K24ozWRooDAAAOSd++i9OIxe1jVwUthVnsjRQGAAAck789F+cRi5qG7kobCvOZGmgMABWJj6VFKdJR42cED+Si9PIRW0jF4VtxZksDRQGwMrEp5LiNOmokRPiR3JxGrmobeSisK04k6WBwgBYmfhUUpwmHTVyQvxILk4jF7WNXBS2FWeyNFAYACsTn0qK06SjRk6IH8nFaeSitpGLwrbiTJYGCgNgZeJTSXGadNTICfEjuTiNXNQ2clHYVpzJ0kBhAKxMfCopTpOOGjkhfiQXp5GL2kYuCtuKM1kaKAyAlYlPJcVp0lEjJ8SP5OI0clHbyEVhW3EmSwOFAbAy8amkOE06auSE+JFcnEYuahu5KGwrzmRpoDAAViY+lRSnSUeNnBA/kovTyEVtIxeFbcWZLA0UBsDKxKeS4jTpqJET4kdycRq5qG3korCtOJOlgcIAWJn4VFKcJh01ckL8SC5OIxe1jVwUthVnsjRQGAArE59KitOko0ZOiB/JxWnkoraRi8K24kyWBgoDYGXiU0lxmnTUyAnxI7k4jVzUNnJR2FacydJAYQCsTHwqKU6Tjho5IX4kF6eRi9pGLgrbijNZGigMgJWJTyXFadJRIyfEj+TiNHJR28hFYVtxJksDhQGwMvGppDhNOmrkhPiRXJxGLmobuShsK85kaaAwUMEgdYSVIRbHGjlKSSJEslaLXHQiF53izXCWURjIkz4gC4q8MsTicCNEQdZzJG61yEUtclEo9iRnE4WBPOkDsqDIK0MsDjdCFGQ9R+JWi1zUIheFYk9yNlEYyJM+IAuKvDLE4nAjREHWcyRutchFLXJRKPYkZxOFgbyp40P8Vpi8NlvjkLzSz8vicIsM0fr2EVLSzwzYlAfsklkzl+qMhlAUhpImCgN5TI7ZGofklX5eFodbZIjWt4+Qkn5mwKY8YJfMmrlUZzSEojCUNFEYyGNyzNY4JK/087I43CJDtL59hJT0MwM25QG7ZNbMpTqjIRSFoaSJwkAek2O2xiF5pZ+XxeEWGaL17SOkpJ8ZsCkP2CWzZi7VGQ2hKAwlTRQG8pgcszUOySv9vCwOt8gQrW8fISX9zIBNecAumTVzqc5oCEVhKGmiMJDH5JitcUhe6edlcbhFhmh9+wgp6WcGbMoDdsmsmUt1RkMoCkNJE4WBPCbHbI1D8ko/L4vDLTJE69tHSEk/M2BTHrBLZs1cqjMaQlEYSpooDOQxOWZrHJJX+nlZHG6RIVrfPkJK+pkBm/KAXTJr5lKd0RCKwlDSRGEgj8kxW+OQvNLPy+JwiwzR+vYRUtLPDNiUB+ySWTOX6oyGUBSGkiYKA3lMjtkah+SVfl4Wh1tkiNa3j5CSfmbApjxgl8yauVRnNISiMJQ0URjIY3LM1jgkr/TzsjjcIkO0vn2ElPQzAzblAbtk1sylOqMhFIWhpInCQB6TY7bGIXmln5fF4RYZovXtI6SknxmwKQ/YJbNmLtUZDaEoDCVNFAbymByzNQ7JK/28LA43QpQKUfDkR9Y6s2YY6oyGUBSGkiYKA3lMjtkah+SVfl4WhxshSoUoePIja51ZMwx1RkMoCkNJE4WBPCbHbI1D8ko/L4vDjRClQhQ8+ZG1zqwZhjqjIRSFoaSJwkAek2O2xiF5pZ+XxeFGiFIhCp78yFpn1gxDndEQisJQ0kRhII/JMVvjkLzSz8vicCNEqRAFT35krTNrhqHOaAhFYShpojCQx+SYrXFIXunnZXG4EaJUiIInP7LWmTXDUGc0hKIwlDRRGMhjcszWOCSv9POyONwIUSpEwZMfWevMmmGoMxpCURhKmigM5DE5Zmscklf6eVkcboQoFaLgyY+sdWbNMNQZDaEoDCVNFAbymByzNQ7JK/28LA43QpQKUfDkR9Y6s2YY6oyGUBSGkiYKA3lMjtkah+SVfl4WhxshSoUoePIja51ZMwx1RkMoCkNJE4WBPCbHbI1D8ko/L4vDjRClQhQ8+ZG1zqwZhjqjIRSFoaSJwkAek2O2xiF5pZ+XxeFGiFIhCp78yFpn1gxDndEQisJQ0kRhII/JMVvjkLzSz8vicCNEqRAFT35krTNrhqHOaAhFYShpojCQx+SYrXFIXunnZXG4EaJUiIInP7LWmTXDUGc0hKIwlDRRGMhjcszWOCSv9POyONwIUSpEwZMfWevMmmGoMxpCURhKmigM5DE5Zmscklf6eVkcboQoFaLgyY+sdWbNMNQZDaEoDCVNFAbymByzNQ7JK/28LA43QpQKUfDkR9Y6s2YY6oyGUBSGkiYKA3lMjtkah+SVfl4WhxshSoUoePIja51ZMwx1RkMoCkNJE4WBPCbHbI1D8ko/L4vDjRClQhQ8+ZG1zqwZhjqjIRSFoaSJwkAek2O2xiF5pZ+XxeFGiFIhCp78yFpn1gxDndEQisJQ0kRhII/JMVvjkLzSz8vicCNEqRAFT37CWX/20SuPPfPK1V9FfXX/0mtfe+58M4Hv+6tLrz3z+dc+aijOmmGoM5qkQkloIDQ/eOWpr/Q3e/vn3/vzrz8S7vpTf3r2w1/e3Dt4/4dnn3s0/KevvHT+xk/i/iB2RpaSuTEShYE86clxwVHe+cnVt5984dL7a47VPz7buPewVyZ3XkxqHCabl8Wp0/J0ufTBsGz0K+RlcbglFGLj6puff+zNS5/F6LfoxH9nODZvNN7/Zy88YYwx5nNPvnzpSrMTFauVaKyNSiUnP9EJdvGgbp594YsUBslEY/HUNj4So2bOVUfiw9r8+SSNaJIKJYGBMJgV+5u98eG3v/Ro9fUPfnnz9v98959+xbxw6f3bN17/8hefc3d/snfw/uVvPWk2Y5+bKAwoDJKX8OQY5yi/9/75TbPemqZx6bmlRmBy58WkxmGyeVmaOhOYLpc+GJaNfoW8LA63hEKcfyJfdxANlhqDsXn3ivu1R1746//Q7Nxo/PCPnnriufPNiFjtRGNtVCo5+UlMsJ2ffHjppac+Z8znnvw/v/Hco8+8cvVXN2///NL2N58M9+PRr/+zH9783mvPGGOMefy5880bjQ/+5ctfCb/4yAtnv9c4mNhg8+Z3XguXnk889+fvv387TPOJ5/7sW889OvaPzRtnw4089ccvvfAEhYGFU9vUSIyaOVceiQ9rOSoMbA+E8da49Jz5ykuvfePJ/pluItZ+H/7XsUkv8vQ6PbLuvX9+0zz69W/82dcf6e/ez2/s2R9ZSubGSBQG8hKeHOe0iKP84P2r/+6lpz5nBiPkb3/45ufDfXrh0rWHnLQGWwuH1v/66JXHwtdunv1pc3IK+PmNzz565bFnnnvhmbEf+vEUagNb4zCBvCKmzpnJce/SaOr8H1NJvX/b+nQ53KV+aj+9uuhgaFx98/NP/d5z/V0aRB+vNkh00rQU4i+vnP/TJ40x5it/8PLvPfLYm5c+WzSI3p8+Hf78xtwtN8++8MSTL//5S099bnAGGl+shyue//y3s7F+Frl75pEXzn7vv74/GpWNX88cQr+69NpXnnzh9560OiptDTqLcdudVea25gevPBUuH3/5H9zqI+aZV67+8u8v/+kjj/7x2Z8e9JePj7156bNhrLffffmLj/z+pWu3uzcaP/yjUe5h27/02u+Yp771buPgRuOHf/TUF796/taNxqXnjHnkhb/+D817P7n69pPma69/+Oml136n/y8f/PVzj5oiFgazp7aZcbd4NnvISGzMzpz7ERPs1Ei89Hb4IcPgWzTPvvD4Iy986xsvPDH2j7PziUw0NkOxPBCmNn7rSuPgZuPSc/0z3a8uvfbMqCprXHrObP7r83/++dHJaPZXHrMj639cO79pzBPPubs/Cb/65W9fub1vfWQpmRsjURjIS2RyfEiLOspvXX3p0Se+ev7Wjf4vQsbnu8Vj9e4V92v9r/700lcf/drrH94dzJ4HEVPAzz965bHPPfnaBz+JHqhJNVvj0H5eEVPn/xvV4YO+ikhq6lcgsafL2zde//IXw29x7fwfP/Llb1+5fW/BwbB79c3Pm9955er+cPsF+MSg85Orbz8Z/pqwufv6C0+Yx9689P8sGESdqNPhvI3/8ocf/uLGXvPsC4/3x9pnH73y2HClHmbx7bMzsY53+40Pv/2l/re7dfb3v/gl98aN4WsiDqFPL732jHnq7UvNDp8YxG+Nq29+/tE/ffdW5+Ze9+atqy89OjVI771/fnNyPTT+9rHcR+Pxicn0L73fuPSc+eJLl2+PvsWVq688NviXvdvvvvzF4hUGs6e2Dz6MGHeLZrPJHpseiY2rb87MnD+bnWDHRmLnJ1ffftJ85Y8u/88bt//nu//0K4/8/qVrt5tnX3jc9GePD1556vEvuT/7+9n5JPuFgeWBENkmz3Sj1w/PdKOejDzTTY2sC5fOb5r+Pnf+/vKfPtJftFgeWUrmxkgUBvISmBwf1j572FHeH2n7UZ+3zo7Vu1fcr5lHv/7Kd/7TlWZnbAtTq8PBFDAxxigMHjp1Djs8qq9Gc+LMluNOl5975IU33cs3B/ceRH743t+33fEfoSiFwa8uvfbMIy9f/fu97uj8MX4iXzSIhqfDxd9iqjAYBj0qDKZinS4MzBPPvXbh3eEVz5HR9Pfz07Efh8Igbpv4tfEou19euXz57PnvvR7+inpqPdS8+e75S2fPnws/yfn8axf+9QuP93f62a8/99hkV/Y/9BscEuG3uHJ17CAp5D0GDzm1DcfdotksqscmC4PpmfNnsxPs2Ci7e8X92kzZ8MnZFx4fDLdwP69eXDyfpBiNxVAsD4SRsc8zV/4V2I/PLhpZf37226PJub//P//I+shSMjdGojCQZ39yXGr2nD3KOz/58D+dPX/prBt+6jq5ppkeq//5b89vDnZ58+yHP3u3/67Bp6KjyXFmCpgYYxQGc6bO6Q4fLwxmkjr/7efsTpcvfPfKh1dfH7887Pa9+QfDR7vjP0KRCoPh6WEQ4sJBND0W/vzst4eD6MVXvvXiaECNclnpE4Opjexdufzt8evBRp8YRAz2T8d+HAoDG4N6utrfu3b+jx956puvn7/0l1eb16Z+UXr71tnf/+KTL587e96/1Pgf0yvUifXuoDUiC4Nif2IQfWqbXYYumM0mT20zI3G5TwzGR+L/8dwLX5z8QZ955erPxiIO9/PqxYj5RCYai6FYHgiRbTQQZi6affRP3/3P35289GtyHEWMrInf2owVBnxiQGGQIvuT41Kz5/RR/tOfXvrqo195yf3e2f/7o/d/OvnLzmXHaucnH155Jbyss78E+XXEFEBhMNkips4f7kZ1eL+vbkQktfgTg9Wny1ELr459yMFQ2MJg6jd83/t4/iAKL8qaPh0u/hbjv8KcvsfgkZev/M1srLc6EdsJ764bu7Ek6hCiMLDaIq4P/PTSa8+MX7UyWA898SX3xo3PPnrlsfGLu6YuYg6vkDn7vUb/ephHXr7697OFwdX/r+j3GESc2t7/TxHj7t6Kp7axkTh9j8EXX7r8acQEOxqJ4xNF1AbHCoP8fWJgeyBEtbGBMHUX+CMvX/37qZvFpyfJ2ZF15W9mC4PPuMeAwiBd9ifHh7eIo3z36pufH78Qc7im+fK3r/yvxWN19LyUm83d118YXs38tdc/vB0xBUwXBk98yb0x/y5Ma83WOLSf1+zUeeVqVIf3++qnEUktLgxWny5HX+385IO/fu7Rr73+4a8WHAwzhcHXXv/wrsW8LA43eyFG3GNw8cr8QXT7V1Gnw8XfYnz1MPVUoqdeunw7Itaxt4++Gh5XX/72lZ/2o2lEHEJThYGdUank5Jf6BNud80SBH/5R+AHOU9983f3mk+Zrr3/4y2vn//gRYz7/2vt/e/lbTxpjzOeefPnfvv7yV8yXv31l/KECo2enfO7Jl//dpYmbiMY/aSz4U4lmT21XL0aMu3vLndqiRmLUzLlwJIYTRfiwgeFbbs0UBh98lMd7DOwPhNk2PhD6E5oxxvRv4Rgka4wZ3FI8+fbpkfXriE8MPuOpRBQG6UpgclyiRTy6YTiivvKS+29feurxL7k3fvbTS1991JjHvnX2e4tPWsOnEg2fsH7r7O8/Ycwz3zj/vekpoH5trDA4GEwHiZ/AbI3DBPKanTr33o+YHAd99Wff+79mkopYw8WaLseeSjR4VveN+QeD/8OxwmAQ/ZyHrq6Tl8XhZjXEmaeI/K8Fg+jN7/3X2dPh4vJp4qLn0dm0/yyaTlSskbs3eLb6MJof3pjZzw+/NyoMrI1KW4POYty25hNa/KwTmEsjTm0/jViG3l0wm0UtQ8dHYtTM+dCROHgqkXnqm//y6s9vRHxi8FEjl08lolkKJU0UBvISmRxpiY1D8ko/L4vDjRClQhQ8+ZG1zqwZhjqjIRSFoaSJwkAek2O2xiF5pZ+XxeFGiFIhCp78yFpn1gxDndEQisJQ0kRhII/JMVvjkLzSz8vicCNEqRAFT35krTNrhqHOaAhFYShpojCQx+SYrXFIXunnZXG4EaJUiIInP7LWmTXDUGc0hKIwlDRRGMhjcszWOCSv9POyONwIUSpEwZMfWevMmmGoMxpCURhKmigM5DE5Zmscklf6eVkcboQoFaLgyY+sdWbNMNQZDaEoDCVNFAbymByzNQ7JK/28LA43QpQKUfDkR9Y6s2YY6oyGUBSGkiYKg5Tcv3//+9///rlz586dO/fNb37z5MmT3/zmNw8ODgImx6yNQ/JKPy97A5EQxUIUPPmRtc6sGYY6oyEUhaGkicIgPV/60peGB8EXvvCFVqsV/juTY7bGIXmln5elIUiIkiEKnvzIWmfWDEOd0RCKwlDSRGGQhvv37+/s7Dz99NP/8B/+Q2PMF77whTt37gy/yuSYrXFIXunnZWMUEqJwiIInP7LWmTXDUGc0hKIwlDRRGCTr4ODg4sWLx48ff/XVV+v1+he+8IXHH398vCoImByzNg7JK/28Yg9EQpQPUfDkR9Y6s2YY6oyGUBSGkiYKg6TcvHnz1VdfPX78+Llz54aVwLVr16aqgoDJMWvjkLzSz2v9cUiIakIUPPmRtc6sGYY6oyEUhaGkicLAsvv371+7du35559//vnnr127dv/+/Ye+hckxW+OQvNLPa+2wCFFPiIInP7LWmTXDUGc0hKIwlDRRGFhz586dc+fOGWPeeuut4Y3Fy2ByzNY4JK/081o7LELUE6LgyY+sdWbNMNQZDaEoDCVNFAYW7OzsnDx58vjx4xcvXgyfQLoSJsdsjUPySj+vtcMiRD0hCp78yFpn1gxDndEQisJQ0kRhsL6DgwPf948fP37y5MmdnZ21t8PkmK1xSF7p57V2WISoJ0TBkx9Z68yaYagzGkJRGEqaKAzW0Wq13nrrLWPMuXPnVrpqKBKTY7bGIXmln1fMIUaIGkIUPPmRtc6sGYY6oyEUhaGkicJgBeM3Fvu+v8yNxctgcszWOCSv9POyMtAIUTZEwZMfWevMmmGoMxpCURhKmgQLg7v12tMVr9lL7BsEQRAEndb17VPbjaN4Wzk4ODh37lz45whu3rxpZ9cGmByzNQ7JK/28LA43QpQKUfDkR9Y6s2YY6oxGw5jNPSVzY6S8f2LQa3qVp2v1u2tvYGdnZ/jnCNa4sXgZTI46J0fy0pOXxeFGiFIhCp78yFpn1gxDndFoGLO5p2RujJROYXDU9k+Zqt8O/69TrzknvL/7btXZqnd6Qbd13a06xhhTqfnNbrDnV49V/b0g6HXqW4454bUeDD5e+NF71Y3ymTNVxxhT2arv94Ig6Db9WsUYY8xGdXun3Qt6La9iKmdqLzqjPi+7je5Ke3z//n3f98OrhnZ2dmxdNRSJyVHn5EheevKyONwIUSpEwZMfWevMmmGoMxoNYzb3lMyNkVL6xOCo4ZZKbuMoCIIHLe+EU7u+V99yKl7r6La/ueFU39ltP+g2L1SdE15rr147VnIbR8Hdeu1Yf00f1hK3PnJLTnnrert3uO+fdpyt+m9+4W9uONULze5Rt3mh6hyr1X/dqW85ZqPqfdINv2mLiYUAACAASURBVG9Yfiyt1Wqt9+cI1sbkqHNyJC89eVkcboQoFaLgyY+sdWbNMNQZjYYxm3tK5sZIaV1K1Par5pTfPuov8Vv3Wt4Jp1b/Tcur9D8TCIL+ZwW3Gm655DYOW16l8ie1F591Gwf7/ulSrd5p+9XhKr/tV82J8/5fVZzT/v7h4O2lkvvRLe+EqXitXhAWIaNPKh6m1WqFf47A9/2ErhqKxOSoc3IkLz15WRxuhCgVouDJj6x1Zs0w1BmNhjGbe0rmxkhpFQades0pu427YT3QCe7Wa+Wq/4u2f2qyc0pVv9XyTpTcj255m5v+Bz+oPuvu7nqVr7qNg059yxmu8tt+1fzhX/zFHw5qgCAI9vzqRsX78Pronua7gw8fltJqteL8OYK1MTnqnBzJS09eFocbIUqFKHjyI2udWTMMdUajYczmnpK5MVJahUF4E/APvlsrnfb3D4Ojhlsqu417E/ce9B21/VPmxTO1Z/9FvfPreu3E255bqXit3oOWd2Kwyj/c9087lb/yz48+EOjt+5vOsdr1D71KpX9HQew7j9PB5KhzciQvPXlZHG6EKBWi4MmPrHVmzTDUGY2GMZt7SubGSKk9lSi8YcApu7vdIOi1vIqzVe8cdRvbZWfTa3aCXnt3u+pUvFYvOGq4JWOcWr0TdBtu2Zhjtfrd/hbK241ur9e+vlU+tun/4jf1LSd8e/cTr7phKl5rf3DNUjD8mGK1247Tx+Soc3IkLz15WRxuhCgVouDJj6x1Zs0w1BmNhjGbe0rmxkipFQYPWt4J078foNcJ7zzuBUHQaflbZWOMccq17zbah0F4x3C/GOg23HJYDARHDbe0UX37jfCRRDW/2Q0i3j52l3MQdHfdsmNG9zAoxeSoc3IkLz15WRxuhCgVouDJj6x1Zs0w1BmNhjGbe0rmxkjZ+TsG7bGPAvKFyVHn5EheevKyONwIUSpEwZMfWevMmmGoMxoNYzb3lMyNkbJSGIx/yJA3TI46J0fy0pOXxeFGiFIhCp78yFpn1gxDndFoGLO5p2RujJSVwiDPmBx1To7kpScvi8ONEKVCFDz5kbXOrBmGOqPRMGZzT8ncGInCQB6To87Jkbz05GVxuBGiVIiCJz+y1pk1w1BnNBrGbO4pmRsjURjIY3LUOTmSl568LA43QpQKUfDkR9Y6s2YY6oxGw5jNPSVzYyQKA3lMjjonR/LSk5fF4UaIUiEKnvzIWmfWDEOd0WgYs7mnZG6MRGEgz0ACeWWIxeFGiIKs50jcapGLWuSiUOxJziYKA3nSB2RBkVeGWBxuhCjIeo7ErRa5qEUuCsWe5GyiMJAnfUAWFHlliMXhRoiCrOdI3GqRi1rkolDsSc4mCgMVpI/JIiKsDLE41shRShIhkrVa5KITuegUb4azjMJAC/H7k4rTCCtDLX5Y5KihJZojskv8yCxUk04b2UBhoIX4lFGcRlgZavHDIkcNLdEckV3iR2ahmnTayAYKAy3Ep4ziNMLKUIsfFjlqaInmiOwSPzIL1aTTRjZQGGghPmUUpxFWhlr8sMhRQ0s0R2SX+JFZqCadNrKBwkAL8SmjOI2wMtTih0WOGlqiOSK7xI/MQjXptJENFAZaiE8ZxWmElaEWPyxy1NASzRHZJX5kFqpJp41soDDQQnzKKE4jrAy1+GGRo4aWaI7ILvEjs1BNOm1kA4WBFuJTRnEaYWWoxQ+LHDW0RHNEdokfmYVq0mkjGygMtBCfMorTCCtDLX5Y5KihJZojskv8yCxUk04b2UBhoIX4lFGcRlgZavHDIkcNLdEckV3iR2ahmnTayAYKAy3Ep4ziNMLKUIsfFjlqaInmiOwSPzIL1aTTRjZQGGghPmUUpxFWhlr8sMhRQ0s0R2SX+JFZqCadNrKBwkAL8SmjOI2wMtTih0WOGlqiOSK7xI/MQjXptJENFAZaiE8ZxWmElaEWPyxy1NASzRHZJX5kFqpJp41soDDQQnzKKE4jrAy1+GGRo4aWaI7ILvEjs1BNOm1kA4WBFuJTRnEaYWWoxQ+LHDW0RHNEdokfmYVq0mkjGygMtBCfMorTCCtDLX5Y5KihJZojAMCW1AqDBy3vhKn6bUubW0e3dd2tbTeUnqLEz9zFaYSVoRY/LHLU0BLNEQBgS2qFwd167VjJbRxZ2twaei2v4mzVOz25XVhE/MxdnEZYGWrxwyJHDS3RHAEAtiRaGPS6Lb9WdoxxymfOVJ1S1d8Luk2/VjHGGLNR3d5p94Ig6LSub1cdY4xxqhea3V7Qa3qVp2v1u0EQBJ16zTnhtfbqtfKL7jtbZceYjU3vRz92q44xpvxGvX04tgWnXPNb3V4Q3K3Xni7X/sqtbhizUfU+6bS88Lsa2epkPvEzd3EaYWWoxQ+LHDW0RHMEANiSYGHQ2/c3nY2q90m3d9vf3DCm7O5+4m9uONULze5Rt3mh6hyr1X/dqW85zqbX7ATdXbdcqnjNXtuvmlN++ygIgqOGWyq5jQcNt2Sc6ju77d+2/VP9ouKo6VU2qv7P9/3TjlPd3m33up941WMVr9nrNb2K41Tf2W0fDj4o6DTcslOrd+z1nV3iZ+7iNMLKUIsfFjlqaInmCACwJbnC4EHLO2EqXqsXBMFR2z9lzKn3/u47Fee0v38YBEEQ7PnVUuntd79TKVW85tj1Pb1Ofcvpv/FByzvh1Oqdtl81J7zWg4nN9ppeZaP63o+80RaO2v4pU/Xbo9cHRw23ZE75+594lY2qv7d4p3d2dtb9eeMSP3MXpxFWhlr8sMhRQ0s0RwCALckVBnt+dWOwXg/X+t/5u/dODUqFwQve/tdnnLI7cUNwd+xX+3frtacr3q3fjEqFsXsVOvWaU3Z9r2omVd9rjl5/1PZPmYrX+k29Nv2Nph0cHDz//PPHjx+/ePHiwcHBuj/4msTP3MVphJWhFj8sctTQEs0RAGBLooXBscFv6O/Wa8ec2n/cHXswUW/f33SO1by/Gv5qvy/iBoN7/c8NJr/av0ao+d7wuqOBB6PXDwqJw6XvPG61WufOnTt+/Pirr76a5gcI4mfu4jTCylCLHxY5amiJ5ggAsCW5wuBuvXbMqV5odh+062+UjdP/xX//doJPvOqGqXito6ZXOVb1PukGnaa36ZS3G/vX+7/aD29TdrbqnV/Xa0/3P3wYXSM0+Cigs+uWwy0ctnffqTonvFZrVJP0C4lfd+pbziq3Hd+/f39nZ+fkyZOpfYAgfuYuTiOsDLX4YZGjhpZojgAAW5K8+bh9fWv0SKJjtfrdIOi0/K2yCR8f9N1G+zAIet3mhcEjibavtzpBb7++VTHGmPIZt1YxVb/da3qVSngVUP9e5KMgvOKo5DaORs8+MqZcu9Bo9/qfMzwIgmEh8dtuY7tszNiFTMu6c+dOOh8giJ+5i9MIK0MtfljkqKElmiMAwBb+8vFSUvgAQfzMXZxGWBlq8cMiRw0t0RwBALZQGKwmuQ8QxM/cxWmElaEWPyxy1NASzREAYAuFwTqS+ABB/MxdnEZYGWrxwyJHDS3RHAEAtlAYxGLxAwTxM3dxWvzcxX+E4rT4YZGjhpZojgAAWygMLLDyAYL4mbs4LX7i4j9CcVr8sMhRQ0s0RwCALRQGNg0/QDh58uTOzs79+/eXf6/4mbs4LX7Q4j9CcVr8sMhRQ0s0RwCALRQG9o1/gHDu3Lk7d+6E//gHf/AHC0oF8TN3cVr8iMV/hOK0+GGRo4aWaI4AAFsoDBJ0586dixcvhh8g/Jt/82+MMb/7u78770Ij8TN3cVr8ZMV/hOK0+GGRo4aWaI4AAFsoDNKws7Pz+OOPG2OMMY8//nj4GcIU8TN3cVr8QMV/hOK0+GGRo4aWaI4AAFsoDNLQarXMmC984QutVmvqNeJn7uK0+IGK/wjFafHDIkcNLdEcAQC2UBik4eDgoDXgD0y9RvzMXZwWP1DxH6E4LX5Y5KihJZojAMAWCgMtxM/cxWmElaEWPyxy1NASzREAYAuFgRbiZ+7iNMLKUIsfFjlqaInmCACwhcJAC/Ezd3GadNTQQvxQLE6TjhoAsBQKAy3Ez9zFadJRQwvxQ7E4TTpqAMBSKAy0ED9zF6dJRw0txA/F4jTpqAEAS6Ew0EL8zF2cJh01tBA/FIvTpKMGACyFwkAL8TN3cZp01NBC/FAsTpOOGgCwFAoDLcTP3MVp0lFDC/FDsThNOmoAwFIoDLQQP3MXp0lHDS3ED8XiNOmoAQBLoTDQQvzMXZwmHTW0ED8Ui9OkowYALIXCQAvxM3dxmnTU0EL8UCxOk44aALAUCgMtxM/cxWnSUUML8UOxOE06agDAUigMtBA/cxenSUcNLcQPxeI06agBAEuhMNBC/MxdnCYdNbQQPxSL06SjBgAshcJAC/Ezd3GadNTQQvxQLE6TjhoAsBQKAy3Ez9zFadJRQwvxQ7E4TTpqAMBSKAy0ED9zF6dJRw0txA/F4jTpqAEAS6EwAFBQ4svl4jTpqAEAS6EwAFBQ4svl4jTpqAEAS6EwAFBQ4svl4jTpqAEAS6EwAFBQ4svl4jTpqAEAS6EwAFBQ4svl4jTpqAEAS6EwAFBQ4svl4jTpqAEAS6EwAFBQ4svl4jTpqAEAS6EwAFBQ4svl4jTpqAEAS6EwAFBQ4svl4jTpqAEAS6EwAFBQ4svl4jTpqAEAS6EwAFBQ4svl4jTpqAEAS6EwAFBQ4svl4jTpqAEAS6EwAFBQ4svl4jTpqAEAS6EwAFBQ4svl4jTpqAEAS6EwAFBQ4svl4jTpqAEAS6EwAFBQ4svl4jTpqAEAS6EwAFBQ4svl4jTpqAEAS6EwAAAAAEBhAAAAAIDCAAAAAEBAYQAAAAAgoDAAAAAAEFAYAAAAAAgoDAAAAAAEFAYAAAAAAgoDAAAAAAGFAQAAAICAwgAAAABAQGEAAAAAIKAwAAAAABBQGAAAAAAIKAwAAAAABBQGAAAAAAIKAwAAAAABhQEAAACAgMIAAAAAQEBhAAAAACCgMAAAAAAQUBgAAAAACCgMAAAAAAQUBgAAAAACCgMAAAAAAYUBAAAAgIDCAAAAAEBAYQAAAAAgoDAAAAAAEFAYAAAAAAgoDAAAAAAEFAYAAAAAAgoDAAAAAAGFAQAAAICAwgAAAABAQGEAAAAAIKAwAAAAABBQGGjWa3kVM1+55vkftLq9Fd4Sqnit8E29pldxjDHGHKvV7y69W8N3GWOMU6t3pl/xoOWdeOheGONUvGZv/MUVr9Xrdepb/a07W/VOb+EO9Hd7tZ8aAAAAUSgM9FpmvetULzTHaoMUCoPpbxGxfI9TGARBp17rVwbRezXagcG3pjAAAACIj8JAr6XWu8Ypu7vdld4SqzCYXfTPvjdeYRDcrdeO9V+x8OOI4VcpDAAAAOKjMNBr9lfjoy+1d7arG2bmqwveEvUNVi8MRm/56tvuaWepNXfEUj7yq4PtLLyaKGqfV/upAQAAEIXCQK+F692x1bM54bUeLPGW2W+wcmEw2n7Fa90bXvMz2oEoqxYGi64mivwBKQwAAADiozDQa9nCIL1PDIaL+PAqoOE1P+H/PvRdSxcGc68mit4UhQEAAEB8FAZ6LXsp0diVPMkWBqPXhx8RjBUni64mWqMwmHM10ZwdpjAAAACIj8JAr+VuPn7Wbdxb5S1jS+oVC4OJ64imr/lZcDXRGoVB9JbnFQCr/dQAAACIQmGg1xLr3UrNb3ZXe8vahcHUdUShxU8QmnrjKoXBaN+G327udigMAAAA4qMw0GvherdSu7DbnrlqJsHCYM6HA0tcxrNWYTD77/P3lsIAAAAgPgoDvWbW3L1uy6+VB88iKr9Rbx8+7C2Lv8HyhcH4Q5BWXXyvVxiML/dPeK0Hi+644B4DAACA2CgM9Ip+NOe+vzlcoZe3G90YS+QVCoPRJUMLzLmaaM3CYPJqolv3BpXJ7EYoDAAAAOKjMNBrznr3cN8f/GWxyT97PP8t877B0oXB6DqixZVB5DddtzCY+NK/cM8cm7erFAYAAADxURjoNXe927vtbw6eVTrvqUQ2C4OFf4p4Yjsbm/7tmS+vXRhE3TwQtQMUBgAAAPFRGOi16Kr6ORcULfeE08Hdw6MF/VxOrd55+KOHFi3u4xQGs3sYuQOr/dQAAACIQmGg18JfhE9cUDR8fmgihcHoOqK5HyxM3Sg8+cUYhcH4V+fvAIUBAABAfBQGej3kCpnxC4qc0/7+YZBIYXB9b/F1RP2dmf2zA0NxCoPJn2jODlAYAAAAxEdhAAAAAIDCAAAAAACFAQAAAICAwgAAAABAQGEAAAAAIKAwAAAAABBQGAAAAAAIKAwAAAAABBQGAAAAAAIKAwAAAAABhQEAAACAgMIAAAAAQEBhAAAAACCgMAAAAAAQUBgAAAAACCgMAAAAAAQUBgAAAAACCgMAAAAAAYUBAAAAgIDCAAAAAEBAYQCk6U8uf1q0Jt3lAABgWRQGwBhjIpqVr0a9YGIBveJXx1+Qoa8+pLdtfRUAAKyOwgBIj/jv7/nEAAAAzKOxMDhquKWS2zhK/zsDyRJfplMYAACAeRQWBg9a3gmnVu+k/o2BpIkv0ykMAADAPEkWBr1240KtbIwxxqluX291guBuvfZ0ufZXbnXDmI2q90k3CIJu67pbdYwZ/EvUa4JOy98abOqd3fZh0Gt6lVL5zJmq41S8Zs9SdwCJEl+mUxgAAIB5kisMDvf90075jXr7MOjd9jc3nFq902t6FSdc2fdaXsXZqnd+Xa8dc6oXmt2jbmO7bE54zf/mVRxTfqM+es2Dff+042x6zU7Q/cSrbji1eqdTrznGqV5odikKkBniy3QKAwAAME8alxL12jvb4Wq+7VfNCa/1IAhvJDCn3vu771QG/9I39ppey6uYU/7+J17l2KZ/uxcEQXDU9k+Zkrt7y5t+44ydnZ1z587dvHkz/o8AWCG+TKcwAAAA8yRWGPTau9vhBUKV2rtvVx2n4t36TX3LqXitXtBf31fO717fcibvMx678zh8jdfaH5UKE2/sb2qug4MD3/dPnjxpjHnrrbd2dnbu37+/5o8D2CC+TKcwAAAA8yRVGPRaY7/R79RrzrFafW/sruK79dqxkvvxXrj0H63vx+887jbcslOr/yb83KB9FATB4Kqk/7jrnVj+wUUHBwfXrl176623jDGvvvrqtWvXDg4O1vu5gDjEl+kUBgAAYJ5EC4Nn3ca9oNv0axVjTnitll89VvX3giAIek2v8nStfrfX8iqjmweOld0rf1N7un8zca/pVTaq/l7Qqdec8C7kTtPbdKY2tYr79+/v7Oy89dZbx48fP3ny5MWLF+/cuTP1GmoGJEd8mU5hAAAA5knhUqKNau102Zzwdv9jzRl8hjC6kSBc6xtjNqruj1v3dt1S2W2EDyKqD17f67b8Wtkxxphy7UKj3TtqjF62rps3b547d+75559//vnnh7ci3Llz5x//439cr9fjbBmYR3yZTmEAAADmUfh3DNJ2586dixcvnjx58vjx41//+teNMY888shf/uVfSu8Xckh8mU5hAAAA5qEwGDk4OHjqqaeMMWFt8Lu/+7tcVgS7xJfpFAYAAGAeCoORg4MDM+arX/3qP//n/5wHGcEi8WU6hQEAAJiHwgBIj/gyncIAAADMQ2GggkHqCCtDLI41cpSSRIhkrRZJZQW56LTeCLKCwmAJxkS0xS+I89XxIyODX418QZyvJrrbD0l5uZflsmfEvxr9goeOrFXfouAntd5Lcb6a6G6vMKlaZZA6ksoKctFpvRFkBYWBPOnDr6DIK0MsDjdCFGQ9R+JWi5iygmh0WmME2UJhIE/68Cso8soQi8ONEAVZz5G41SKmrCAandYYQbZQGMiTPvwKirwyxOJwI0RB1nMkbrWIKSuIRqc1RpAtFAbyYh4N4o+dycqDbmyNujjbEe+6rIQ11c9rb2SZjctOwfmmpJ817EPuxc9aydGSe2v0M9GkQ0knUxjIiznkxFd+WVlr2pra4mxHvOuyElZAYZALSvpZwz7kXvyslRwtubdGPxNNOpR0MoWBvJhDTnzll5W1pq2pLc52xLsuK2EFFAa5oKSfNexD7sXPWsnRkntr9DPRpENJJ1MYyIs55MRXfllZa9qa2uJsR7zrshJWQGGQC0r6WcM+5F78rJUcLbm3Rj8TTTqUdDKFgbyYQ0585ZeVtaatqS3OdsS7LithBRQGuaCknzXsQ+7Fz1rJ0ZJ7a/Qz0aRDSSdTGMiLOeTEV35ZWWvamtribEe867ISVkBhkAtK+lnDPuRe/KyVHC25t0Y/E006lHQyhYG8mENOfOWXlbWmraktznbEuy4rYQUUBrmgpJ817EPuxc9aydGSe2v0M9GkQ0knUxjIiznkxFd+WVlr2pra4mxHvOuyElZAYZALSvpZwz7kXvyslRwtubdGPxNNOpR0MoWBvJhDTnzll5W1pq2pjSkyHYl2MiGmQ0k/a9iH3IuftZKjJffW6GeiSYeSTqYwkBdzyIkv0ykMkIREO5kQ06GknzXsQ+7Fz1rJ0ZJ7a/Qz0aRDSSdTGMiLOeTEl+kUBkhCop1MiOlQ0s8a9iH34met5GjJvTX6mWjSoaSTKQzkxRxy4st0CgMkIdFOJsR0KOlnDfuQe/GzVnK05N4a/Uw06VDSyRQG8mIOOfFlOoUBkrBOJxsT0RZ+dWL7C94b9dWJYzJq45n+auQLJkbfit310CyWPjRWxoBNAYVBVlAYqKWkkykM5FEYUBhgVqKdbCVE8YGgf/QpGSwa9iH34met5GjJvTX6OW40Rw23VHYb3YgvdXfd8mm/fbTyNoNet7FdLrmN8K299u521Qn3r7zltzpBcNjefWfwT5Wa35z89t2GO3r3fPca7omqv9f/dlW/vfqOLk/J8U9hIC/mkBNfKChfmtjqZ+vbwWKJdrKVEMUHgv7Rp2SwaNiH3IuftZKjJffW6Oe40SwoDNp+1ZxavTAYLPoHS/tey6s4m16zE/T261sVU/XbvaZXOVb1PukGh+36G+Xp77JkYbDnV49V/b0gOGr7pwyFAYVBOmIOOfGFgvKlia1+tr4dLJZoJ1sJUXwg6B99SgaLhn3IvfhZKzlacm+Nfl4rml635dfKjjFO+cyZqlN2G91ee/dCrRJuxKm+s7u345bC/zvlt3/bbny3Vg5/w79R3d5p9+Zt+ajtnzLlM26tMigMJlbtRw23VHIbe2MlR0Rl0m245dLb/scXamXjlGt+q9sLgk7rev9zB6e6fb2133DLxhhjSieqJ/p7WvXb3dZ1N3zVRtX9cavbC44abmmjWjtdNsaYZ93G7aa36Rhjym/U24fLddd0Py//LusoDOTFnA3FFwrKlya2+tn6drBYop1sJUTxgaB/9CkZLBr2IffiZ63kaMm9Nfp5nWi6u245/IV9p+ltOqbsNn5Rrx1zNv39XtBrX98qOyW3cTT8xKBTrzkbm/7tXv8X/HM+YQiCIOh1P/203Ttq+6cGhUG34ZZHv85v+1Vz6rL/Zmn0KcHwF/+j/Wu4ZRN+yNDddculiner09guO9Xt3XYv/NihvN3ofjbzicG9hvusU31nt33Ya1/fKpfK7m73qOGWjLPp7/cetLwTxmxs+rd7vaZXcZb4UCK6n5d+k30UBvJizobiCwXlSxNb/Wx9O1gs0U62EqL4QNA/+pQMFg37kHvxs1ZytOTeGv28xluOGm7J2ap3ekEQBJ16zZla6O/51dJEYTCu7VcXFQb97zBVGIyW4MPCYPRP0YXB4OtHbf+Uqbje22WnVu9M7MOt6cLgqOGWjtXqdyf24cHoH8d+8CWvVhpRcvxTGMiLORuKLxSUL01s9bP17WCxRDvZSojiA0H/6FMyWDTsQ+7Fz1rJ0ZJ7a/TzGm/pX89zNPyfstvoBt1W3fd9/93wkqHJwqDXbX3g+77v1crGGFN2fa/a/4al6l/8q9F/99f3q39iMLGRWw332WGpcNRwS6UT1RNjpUR/n2cKg8mipf9jPhhdqjT2g1MYYF0xZ0PxhYLypYmtfra+HSyWaCdbCVF8IOgffUoGS2r7MLEYmrLk01cW3KY5YfiwlOF/CIuftZKjJffW6Oc13hLxicHuJ/7msXLtXd//UaP96dQnBr19f9Op1Lwf+Fca7f1VPzGYucfA2ao335u8x2D4a/6Q9U8MKAxgzzJD7uDgwPf9mzdvtsbcv38/KOTqJLl+TnM7WCzRTrYSovhA0D/6lAyW1PZhUWGw5NNXli0MhpdGzF4jISN+1kqOltxbo5/XiWb2HoOP625p/C6C4ScGJ7zWg6OGW3JO+/uH/ccKrVYYTD+VyKnVO1NPJRpWKYP9a7hl45z29/u3Csy/x2Cj4jV7/eLBa/Xm3WNAYQB7lhxyjz/+ePiCf/AP/oEx5o033qAwSKKfU9sOFku0k62EKD4Q9I8+JYMl4X3otPytsjHGVM7UXgxvNlz09JX9vcaF8GIJY8JVyPjGjhpuqfy2f/1CrTJ6+Pr0U1A6g4elDJWq/t7My3pHDbfkvFg7UzHGmPJ2o/3fveqGMU556/r8R76sKX7WSo6W3Fujn9eKZvapRAdhPWCMU659x6tVTMVrHd32NzeMKbu7zfpWOGQqNe87tXKp4jUXHqQThcGgnAiH1abX7ASD8sOEI8L7JOLvGLzt72xXndFDkIZjOXwqUScIDvf90+FjUQ/3/c3wv+41/f7oHn8qEYUB7HnokLtz547v+//kn/yT8AWf+9znvv/97w+/Kr5QUL40Wb6fU94OFku0k62EKD4Q9I8+JYMlyX3odRvb5f6zTT7xqhum5DaO7s5/+sphp77ljP9mdGrhED7epHqh2T3qNrbL5oTX+t8Rv6GM+MQg4heZ9xpuaewBKf3fj7a8ysN/Hbuy+FkrOVpyb41+Jpp0KOlkCgN584bczZs3L168+Pzzzx8/fvzcuXP//t//e2PMP/pH/6jVao2/hjr2WAAAIABJREFUXXyhoHxp8tB+ltoOFku0k62EKD4Q9I8+JYMlyX3oNtzhdcm9Tn1r5vGEC56+Mvkrz/6/jV9KtOdXNyrfefft2Wuaj2YKg6hLnz/+eOIBKf39XPZqpdXEz1rJ0ZJ7a/Qz0aRDSSdTGMibGnI7Ozvnzp07fvz4888/f/HixTt37oQvu3///je+8Y3w8iGswdbUxhSZjkQ72UqI4mt0CoM1dsP2tieuFhhdRbDo6SudVv2K7//AC69G6P8lplCpevmyWxrWD92GWy5Vqydmn4IyWxhEPSzl44+jrmqgMCi2NfqZaNKhpJMpDORNDbmTJ09eu3bt4OBAer/yxtbUxhSZjkQ72UqI4mt0CoM1dsP2tqM+MTi8Pf/pK7/d90875Zrn+1cae/spfGJQwMJgwQ+45LOhJl5f6W+q197t/1VcY8pbfqsTBIft3XcG/zS4IWTszctdYt7rNrbLVb89+o9krdHPSgZy7inpZAoDSeHNAwy5dNjqZ/JKR6KdbCVE8TU6hcEau2F721H3GDxozH/6yt2GWx6//SD6HoNNf78XvnfBPQbhw1KG/zHnHgMKg3FLPhsqCIIg6LV3tqsbw8fjTD33xlT99tRzb6a3vGRhMHzU5sQzN5OzRj8rGci5p6STKQwEtFqt8ZsHGHLpsNXP5JWORDvZSojia3QKgzV2I4HNzz6V6HDB01fe9n+wVXaMMaZc87xa2ZzwWg9GG+s/lehH29WN0TOLujNPQRk9LGXn9uCpKUczL4t+QEo+C4PZZ+B0Fz0bqv3bduO74YVeZvRQmjFtv2oqNfdMuV8YzDwpv38N2PiT8qd6tf/cm48v1MrGKdf8VrcXBJ3W9f7nDuFzb44ag50aqvrtmZcFRw23tFGtnS4bY8yzbuN209t0jDHlN+rtw6T7WclAzj0lnUxhkJL79+/fvHkz8uYBhlw6bPUzeaUj0U62EqL4Gp3CYI3dkNqH3IufdawtzD41v/GL+c+GOgo69Zoz/qnOTKXUvd1qH47dubHc39ad+IMS4ZPyw0+Tdt25T8o/nPnEIPwYavJl93YHHyU9aHknzNjDplZ6IOZ6/axkIOeekk6mMEjWwcHBzs7OW2+9ZQY3DwzrgSGGXDps9TN5pSPRTrYSovgancJgjd2Q2ofci591nC1E/J3diYX+gmdDBVP3bc/50uR1QcPCYPRP0YXBEn9b995MYTB+48rgZR/Xh/eQjP2wKz8pP6AwUExJJ1MYJOLOnTvXrl07efKkMeatt97a2dlZcDMxQy4dtvqZvNKRaCdbCVF8jU5hsMZuSO1D7sXPOs4WJv7m9PCqnkXPhup1Wx/4vu974R+bK7u+N3o21HB9v/InBv/Frw6uDKp6vvvscFNHDbdUOlE9MVZK9PdztjAYlDHjL/u4buVPaK3Xz0oGcu4p6WQKA5umbh64efPmMk8XZcilw1Y/k1c6Eu1kKyGKr9EpDNbYDal9yL34WcfZQsQnBrufzH821FFv3990KjXvB/6VRnt/mU8MZu4xcLbqzfcm7zEYPhUqZP0TAwqDnFPSyRQGcc3ePDD1B8geiiGXDlv9TF7pSLSTrYQovkanMFhjN6T2IffiZx1rC7P3GHxcn/9sqAdHDbc0/venH14YTD+VyKnVO1NPJRpWJoN9arjl/l+bbl/fWnyPQcVr9Y4G/zHvHgMKg5xT0skUBmu6f//+Q28eWBJDLh22+pm80pFoJ1sJUXyNTmGwxm5I7UPuxc863hZmn0p0sODZUO5us74VPrCoUvO+UyuXKl6zN7vV8dsP+iWEMcb0bykOho+fMsZsVL1PIv6Owdv+znbVGT34aPgMq8HjhoKgt+9vOsaU3N3b/f9oHM28bOypRxQGeaWkkykMVnNwcLD8zQNLYsilw1Y/k1c6Eu1kKyGKr9EpDNbYDal9yL34WSs5WnJvjX4mmnQo6WQKg6XcuXNnjZsHlsSQS4etfiavdCTayVZCFF+jUxissRtS+5B78bNWcrTk3hr9TDTpUNLJFAaLTN08cPPmzSS+C0MuHbb6mbzSkWgnE2I6lPSzhn3IvfhZKzlacm+NfiaadCjpZAqDaVM3D/i+v/bNA0tiyKXDVj+TVzoS7WRCTIeSftawD7kXP2slR0vurdHPRJMOJZ1MYdA3dfPAtWvX4t88sCSGXDps9TN5pSPRTibEdCjpZw37kHvxs1ZytOTeGv1MNOlQ0snpFAa9Tn3LqXitiHv+rei0rm+f2l7txvzQ1M0DOzs7Fm8eWBJDLh22+jn5vBY8aOJewz0x+cc1l9/qrluuDB7Jd9jefafqhD9BpeY3u0HQa+9sVzeMMcY45Zrf6vZm3n56+i+GJinRTmbQpUNJP2vYh9yLn7WSoyX31uhnokmHkk5OpzBY54laK+g1vcrTk39Y5CHSuXlgSQy5dNjq5+TzWjBewj+uuXJhMFj0D5+7N/n4bXPKb3db3gmneqHZ7fXa17fKG9PfZfQXQ1OSaCcz6NKhpJ817EPuxc9aydGSe2v0c/xoxJ+aoPw5DbP9vMbbbUmiMOi0rm9XHTP2e8fhamb2S3frtfKL7jtbZceYjU3vRz92q44xpvxGvX045/VPl2t/5VY3+o8N7jW9Svibzzl/oGRgePPA8ePH07l5YEnMhumw1c9J5dVt+rWKMcaUT9eqGyW3cdRrNy7UyuG3carbu61dN/y/UtXf67V3L9Qqgy++s9s+nLvltl81lZp7pjwcI+Or/P7jsW+NlRwzlclRwy2F3+qU3z4YjMrhc7j3/OpG+cyZyaEaV6KDgkGXDiX9rGEfci9+1kqOltxbo5/jRyO+TKcwWGE3bBcGh/v+aSf8i33dT7zqsYrX7HXqNeeE1+pEfOmo4ZbCZc1v2/4pE/4RkKOmV9mo+j+PeH2v6VWccBnUa3kVZ6ve6U38LfQZ4c0Dr776qkn95oElMRumw1Y/J5PXvYb7rFO90OwedZsXqo4pubsH9S1n/G9zltzG0bDGvluvHXM2/f1e0Gtf3yo7iz6R695utQ/H/1LPUcMtjX79v+dXj1UvX3ZLpUFhcNT2T5mq3x7fSL+WOIz4k5zdz/xqqf8Xf7q77rw/FbSiRAcFgy4dSvpZwz7kXvyslRwtubdGP8ePRnyZTmGwwm5YLgx6Ta8yXBb0lxf74Qr+N7dmv9Qe/H3yIHjQ8k6Y8D6EXtOrbFTf+9HC1w8XN92Wd2J6ERMEQRDcvHnz5MmTx48fD/8SWfo3DyyJ2TAdtvo5kbyOGm7p2OByuLv12rHJhf5R2z81WRiM2/OrpYdfqjdVGIzeMCwMhp+5LSgM7jXcslOrdya2ecuvlgb/eNT2TxkbNxQlOigYdOlQ0s8a9iH34met5GjJvTX6OX404st0CoMVdsNyYdD2q1NHUPXyz0Zr+qkvvdcc3ZQ8thjq1GtO2fW9ha8frj9mV1F9d+7ckb15YEnMhumw1c+J5DX25+7HruTptOpXfP8HXnjJ0FRh0G3Vfd/3362VHWNMyb18uVoajJR/9Rej/x6s71f+xGByI/3C4BcTRcjoMqTRP05WHetLdFAw6NKhpJ817EPuxc9aydGSe2v0c/xoxJfpFAYr7EYChcHUHYqDVU7Elx60vBP9XzSO3UDcv0ao+d6i1w8LidXvPNaG2TAdtvo5kbwiPjHYue2fdso1z/evNPb2pz4x6N32N4+Va+/6/o8a7U9X/cRg5h6DY7V6Y+oeg9HHAqO384kBVqOknzXsQ+7Fz1rJ0ZJ7a/Rz/GjEl+kUBivshuXCoLvrlgdPO9l9p+qc8Jr/rb9wn/1Sa69ee7p/sdDoGqHBwqIz+/rWaO0yrAfCjxcW3nasnJrZMP5TMnvdxnY56rIuDWz1czJ5zd5jUP/YLY/fRTAoDDYGN+dsbPq3e/3HCpnVCoOppxI5W/XObyefSjRTbPdH6G8X32PQa1/f4h4DDCjpZw37kHvxs1ZytOTeGv0cPxrxZTqFwQq7Yfvm41635YfXNphy7UKjPbjz+EHEl3pNr1KZueh5uDxdsKmxQqK765YdM7jxIIvUzIbxn5IZdW26Grb6Oam8Zp5KdBjWA8aYcs3zamUzuIPfmJK7s1d/o2yMMU659h2vVnn4L+nHC4NBOWGM6T/dKxiUH8YYY8IKYeLtvdv+ZvjA0/2Wv1Xuv2z4VKKS82L1Rcf0nx9g4y+WJDoo1Ay6nFPSzxr2IffiZ63kaMm9Nfo5fjTiy3QKgxV2I5W/Y4BFhGdDe0/JHD3Tsuq3R4+aHSwf237VVM7UXnSMGf5RrTTZ6mfOXjOWu/t5RYl2MiGmQ0k/a9iH3IuftZKjJffW6Of40Ygv0ykMVtgNCgNxorOh3adkDj8x6EVccNJ6r9r/VfRRt7FdTv1DHlv9zNlrBoUBoinpZw37kHvxs1ZytOTeGv0cPxrxZTqFwQq7QWEgTnI2tPyUzGFh0I24RdX3qmb4vQbXyif5w02x1c+cvdKRaCcTYjqU9LOGfci9+FkrOVpyb41+jh+N+DKdwmCF3aAwECc5G1p+Subg0bRTNUP4XXxv7Br3BfczJMVWP3P2SkeinUyI6VDSzxr2IffiZ63kaMm9Nfo5fjTiy3QKgxV2g8JAnORsaPkpmXxiAGsS7WRCTIeSftawD7kXP2slR0vurdHP8aMRX6ZTGKywGxQG4kRnQ7tPyRw+w37xPQYP2vU3uMcAiyXayamEuOBjsVUf7Huv4T472FT4+OZwxwc38ffau9uDfytv+a2JP0ERdHfd8unJvwmTEiWDhTVNymua9fpZydGSe2v0c/xoxA/pzA2iNd5uC4WBPOHZ0OpTMnv7/qYTlgud6Ydatv2q2Xix+lUn/KddK8+0XIGtfubslY5EOzmVEBcUBqs82Hew6O9vaupvUJhTfvuo1/IqzqbX7PQfGDC15Yg/LpkSJYOFNU3Ka5r1+lnJ0ZJ7a/Rz/GjED+nMDaI13m4LhYG8osyGE8/RF2Crn4uSl7REOznBEB/+/N/24diDfffnP/83CILworty7c3a8Alg03+1uuw27o2XGWN/E2b4/+HmT/ntw27rx251I/xm7vVWN9z+mTNVxxjjlGt+q2uzYFcyWFjTpLymWa+flRwtubdGP8ePRvyQztwgWuPttlAYyCvKbEhhgFUk2smJhbjk83+Hnxgsfv5vEASdT1u/7o3dzX/UcEujX/+HN//carjl0acEs58PDP8l/PPz2zvtXvhpw7Nu478P/2p10N11Lf3V6iElg4U1TcprmvX6WcnRkntr9HP8aMQP6cwNojXebguFgTxmw3TY6mfySkeinZxUiMs+/zfyUqIFfw5isjAYvWhUGIz+bX5hcNRwS85WvdMb2+bly9XS4DkBw3uE7HRGoGawsKZJeU2zXj8rOVpyb41+jh+N+CGduUG0xtttoTCQx2yYDlv9TF7pSLSTkwpx2ef/jhUG08///XjPPzXYr/FPBlb6xOAP/+Iv/nC0kZ9drppTfvvBoCwJxnbv8uWxamT6MqTYlAwW1jQpr2nW62clR0vurdHP8aMRP6QzN4jWeLstFAbymA3TYaufySsdiXZyUiEu+/zfQWHwkOf/Do19mDB9j8GxWv1/T99jMPpYIAgCPjGgMEh7TbNePys5WnJvjX6OH434IZ25QbTG222hMJDHbJgOW/1MXulItJMTC3HJ5/8OluCHi5//OzRWGEw9lcjZqnd6U08lGv0JkVDbr4ZPB154j0GvfX2LewyiiK8wMremWa+flRwtubdGP8ePRvyQztwgWuPttlAYyGM2TIetfiavdCTayQmGuNTzfx8MHuz7hv/jRc//HRi//aBfQhhjjNmoep90g6B/W3MorBDG9W77mxvGlN1Gp9vyw2uWxp5KVHJerL7oGGM2qts7dp8irGSwsKZJeU2zXj8rOVpy7+H9bMxUm3h9ZJv/3vCr/eMq6qujo07oq5EviPPV8AWLO2TBV0e5rPpeW0cIhYE4ZsN02Opn8kpHop1MiAML7ni2QEk/x9wH8WU6hQEsWqOf40cjfkhnbhCt8XZbKAzkMRumw1Y/k1c6Eu1kQhygMHg48RVG5tY06/WzkqMl99boZ6JJh5JOpjCQx5BLh61+Jq90JNrJhJgOJf0ccx/El+kUBksS77e8JqVkIOeekk6mMJDHkEuHrX4mr3Qk2smEmA4l/cxyU+dy0/oWxPstr0kpGci5p6STKQzkMeTSYaufySsdiXYyIaZDST+z3NS53LS+BfF+y2tSSgZy7inpZAoDeQy5dNjqZ/JKR6KdTIjpUNLPLDd1Ljetb0G83/KalJKBnHtKOpnCQB5DLh22+pm80pFoJxNiOpT0M8tNnctN61sQ77e8JqVkIOeekk6mMJDHkEuHrX4mr3Qk2smEmA4l/cxyU+dy0/oWxPstr0kpGci5p6STKQzkMeTSYaufySsdiXYyIaZDST+z3NS53LS+BfF+y2tSSgZy7inpZAoDeQy5dNjqZ/JKR6KdTIjpUNLPLDd1Ljetb0G83/KalJKBnHtKOpnCQB5DLh22+pm80pFoJxNiOpT0M8tNnctN61sQ77e8JqVkIOeekk6mMJDHkEuHrX4mr3Qk2smEmA4l/cxyU+dy0/oWxPstr0kpGci5p6STKQzkGUggrwyxONwIUZD1HIlbLWLKCqLRaY0RZAuFgTzpw6+gyCtDLA43QhRkPUfiVouYsoJodFpjBNlCYSBP+vArKPLKEIvDjRAFWc8xzDKiLfzqaH+Evhr5gjhf1fBDrREEvWflq0l0yJIjSG2faOvPOF9ddq6zOKdSGGhgkDrCyhCLY40QBVnPkbjVIqmsIBed1htBVlAYaCF9EBYLYWWIlfFFjrKSC5GsFSKprCAXneKMoPgoDAAAQOaJPyMoE08lAhajMAAAAJknvkynMEAOUBgAAIDME1+mUxggBygMAABA5okv0ykMkAMUBgAAIPPEl+kUBsgBCgMAAJB54st0CgPkAIUBAADIPPFlOoUBcoDCAAAAAACFAQAAEGHMdFv81fEXZPGra/zIUh2CoqIwAAAAAEBhAAAAAIDCAAAAAEBAYQAAAAAgoDAAAAAAEFAYAAAAAAgoDAAAAAAEFAYAAAAAAgoDAAAAAAGFAQAAAICAwgAAAABAQGEAAAAAIKAwAAAAABBQGAAAAAAIKAwAAAAABBQGAAAAAAIKAwAAAAABhQEAAACAgMIAAAAAQEBhAAAAACCgMAAAAAAQUBgAAAAACCgMAAAAAAQUBgAAAAACCgMAAAAAAYUBAAAAgIDCAAAAAEBAYQAAAAAgoDAAAAAAEFAYAAAAAAgoDAAAAAAEFAbAIsZEtMS++ieXPx02u18df4Gqry7bXVMvAAAACaAwACSNL+gL0qS7HAAARKMwACSJL9MpDAAAQIjCAJAkvkynMAAAACEKA0CS+DKdwgAAAIQoDABJ4st0CgMAABCiMAAkiS/TKQwAAECIwgCQJL5MpzAAAAAhCgNAkvgyncIAAACEKAwASeLLdAoDAAAQojAAJIkv0ykMAABAiMIAkCS+TKcwAAAAIQoDQJL4Mp3CAAAAhCgMAEniy3QKAwAAEKIwACSJL9MpDAAAQIjCAJAkvkynMAAAACEKA0CS+DKdwgAAAIQoDABJ4st0CgMAABCiMAAkiS/TKQwAAECIwkALgxQRVoZYGV+Eq1DKyZK1IGLKBFsjC5lGYaCC9GxQRISVIRbHGsmqkk6yZK0BSWWF3bGGzKEwkCc9CRTUSglNtYntrPjVIONfXeNHjt8hEUEwEvMiiSjJWidiyoQkRhwyhMJAnvQkUFDklSEWhxvJapNOuGStATFlQhIjDhlCYSBPehIoKPLKEIvDjWS1SSdcstaAmDIhiRGHDKEwkMeYTIetfiasFIgMCkZiOjT0s4Z9KIKY/UxM6aCfMY7CQB5jMh0UBhlCYZBjGvpZwz4UAYVBJtDPGEdhII8xmQ4KgwyhMMgxDf2sYR+KgMIgE+hnjKMwkMeYTAeFQYZQGOSYhn7WsA9FQGGQCfQzxlEYyGNMpoPCIEMoDHJMQz9r2IcioDDIBPoZ4ygM5DEm00FhkCEUBjmmoZ817EMRUBhkAv2McRQG8hiT6aAwyBAKgxzT0M8a9qEIKAwygX7GOAoDeYzJdFAYZAiFQY5p6GcN+1AEFAaZQD9jHIWBPMZkOigMMoTCIMc09LOGfSgCCoNMoJ8xjsJAHmMyHRQGGUJhkGMa+lnDPhQBhUEm0M8YR2EgjzGZDgqDDKEwyDEN/axhH4pAW2Fw1HBLJbdxNPuVXrexXa767fjfI9pa2+/uuuXTfjtid+1iOGAchYE8xmQ6KAwyhMIgxzT0s4Z9KILsFAZHbf+USbAwWGv7bb9qTlEYIGUUBvIYk+mgMMgQCoMc09DPGvahCHQUBp2Wv1U2xpjKmdqLTsltHB22G9+tlR1jjDEb1e2dvV23FH6Pqt/utRsXauXwf53q9m67N7m5Xntnu7phjDHOptfsBEGndX276oQvf2e3fRi0/arZqL79RtWJ2v7s648abqlcrZaNcSpes//tjhqD95zy24fd1o/d/jetutdb3WDPr26Uz5ypOsYYp1zzW93e7E+ebj8jJygM5DEm02GrnwkrBSKDgpGYDg39rGEfiiBmP9uIqddtbJfDFXz3E6+6YUpu46BeczY2/du94LBdf6Nsym7j3uA3+r1OfctxTvv7h0Fvv75VMdOfMNyt14451QvN7kHDfdZUzjd2t8umslXf7/X261sVZ9Pf3/erxjjVC83uUbexXTYnvFZ3uP1uY+b1hw235JTd3e7Uvg8/MejuuuVj1e2ddi/c4Wfdxn/3q6V+ZdLddculUUWxOoYDxlEYyGNMpoPCIEMoDHJMQz/b3Yc/ufxp0Vo6/Wwjpm7DLTu1eicIgnDRP7XQb/vVicJg3FHbPzVdGBw13FKp6u8N/v9ByzsxemO4lP/Z5ao5VqvfDYIg6NRrzvj2o16/97FbGrx+3KAwOGq4JWer3glX/nt+tVRyL1+ulgY/11HbP2UqXmvdykDDkIQeFAbyGJPpoDDIEAqDHNPQzxQGhSoMhmv7wT0GvW7rA9/3fS+8ZGiqMOi06ld8/wderWKMMaU3/cunBrsQLvrLbqM7vv3J3Sy7vjd6zVHDLY1vP+r1H9fdUvj6o7Y/9b1O+e0Hk/VJ+BNdvlwtzfxca/WQjiEJPSgM5DEm02GrnwkrBSKDgpGYDg39bHcfxJfpFAbzRXxisHvb33QqNe8H/pVGe3/qE4PDff+0U655vn+lsbf/8E8Mxrc/0P8UYm5hMP36/mumryTiEwOIoDCQx5hMB4VBhlAY5JiGfqYwKExhEHGPwccfu6XxuwiGhUHFa/W6DbfsbPr7vaDXvr5VdubfY/Bg3z/tOK/+zXW33L9H+bBdf6PsbNWb70UXBhWv1Qv3Z/L1B7vzC4MTXuvB4nsMeu3rW9xjAHsoDOQxJtNBYZAhFAY5pqGfKQwKUxgEEU8lOgzrAWNMpeZ9p1YuVbzm0b6/6RhTcnf3rm+FDywq1zyvVg6X5mPGnkoUru9HTxky5dqFRrsX8YlBtzfYfuNo5vXzPjHo3fY3N4wpu41Ot+X3H6M0eipRyXmx+uLgwUfTz05ahYYhCT0oDOQxJtNhq58JKwUig4KRmA4N/Wx3H8SX6RQGxRNeULT2bQUT6GeMozCQx5hMB4VBhlAY5JiGfqYwoDDIOAoDJIXCQB5jMh0UBhlCYZBjGvqZwoDCAEP0M8ZRGMhjTKaDwiBDKAxyTEM/UxhQGGCIfsY4CgN5jMl0UBhkCIVBjmnoZwoDCgMM0c8YR2EgjzGZDgqDDMlBYSC+dMvrYtEKss5E1hoOlSKgnzGOwkAeYzIdFAYZQmGQxSbSz+sh60xkreFQKQL6GeMoDOQxJtNBYZAhFAZZbCL9vB6yzkTWGg6VIqCfMY7CQB5jMh0UBhlCYZDFJtLP6yHrTGSt4VApAvoZ4ygM5DEm00FhkCEUBllsIv28HrLORNYaDpUioJ8xjsJA3v/f3t2ExnHmeRx/7j4IX2IKTOZQYLCnyUUZcljHVMA0BM2asUH2KspWQDERiRILGraFWAxmN2NDatEQNp54wxbRJBgpE55FlxmCQs8Q4kGIFCFMWJoOYtc0Tc0hBCGKRYimqD2UXkqtltxWt+qpp+r7oQ5Jqvqpp/+PHvv5qV7CnEwHwUAjBAMdNyV1Ph7GWouxzsKPShFQZyQRDNRjTqaDYKARgoGOm5I6Hw9jrcVYZ+FHpQioM5IIBuoxJ9NBMNBIMYLBX8fGXxgaX3qny65vx8ZfPl/5+sQWdj+8dfefz166f1PDxeJAEAy0GOss/KgUAXVGEsFAPeZkOggGGil8MPh65FLpJINB42ZlTBAMCAbZHuss/KgUAXVGEsFAPeZkOggGGslzMJhfHrnyohBCXHj1+UvnhsaX3llYGXvzjbPxWU9fvfTulzfGXxBCCPHs+crXtx7Icny8EKcu3bnxoL6/wfrNd++cPx3vfc+e/2F6/sur41dPCSHEufP2ZzcXGjcrY+L01b8bu3pqu/2Vt+/ODMUtXrp/s/P4tXfuzgxduHL+wjNCvHz5N/+dtcXiQKQ01vnd0qlzFn5UioA6I4lgoN5A52TgOZbpeO0uu9Y9Z9SWzSc20fYc85AmEsLAm7Ns6UdRFKw61pT0n/CBJxhII0caVJ1TGaxEeZ/QxvHr1ttAJ05x8mO0S8lfVKksFr8dG7dOXXrPnm+8Nffe+dNiaFxO3n7z1OlXR35bn174y7VfvSjOzIw93L1i8M21K6VTL91/fWHt1oPf/eLCM51XGD7+9PnT585P/vGteXnxwrM/m/z9jXFLXJi+9qB+68HvfnGh9PPKn16vjAlx7vzkH99a/HZs3BLP3XttYfeKwbdjncd/9fbdmSFhXbz7bTYXiwNBMCAYYBd1RhLBQL20gkFT2sODCwY8XbLFAAAPbElEQVRtX06KeOXqS1tM9rteHEgjR9IqGCTKe7Q+6tZrMNg9xcmP0a6U/qIS4uC2d9Ku25GfPXrv9OLa9MOli2dKz9/+pvve+A6fMzOH7P165NKzQ+NLhza+uDa9sNz9S51+89rHP0wv/tB17849S42jWl5cO8beXkrd5YB8jPXhlelnb58jcnJ7BzPW/QxT14/3s7e/nwH1e5/+K6c6JZFVBAP1BrAGCuqyWhZCCGuqapdMx2uHvjdfteIWDXtutbHqxP9m2rIZ+qvz8fFCGPYHq/5WsrG255jmHbnySdUyhDUrGxtRFAaNLxy7FH/AWW6se44Zf37Utrf/aVL6Wx2HBVHgOZZhVyqWIYRhOSt+fd42hBDl2Vor3HfKIxppSrtkVSq2IYQwrKpsBOGBEqRS5wPtHOfzBwcr2vK9T6qWIYQQomTPPWqu7tTDln7nUPqDqlsvAx3snWJXHwN9rCL3M1gKT9r9V60Ply6eeeHi3b9OL64lnjH47rXbD0Yq/345vmVo3xWDten5L69V7o9Ufv38hWeEEEPj77986dntLl56/x8qY+LMzNjDZPv7v8aZysj03jHv3J0ZOjMz9nDnikGX42du/Gt8TEZ/izwQWehDEfRZ5zSmZK43JXWG7ggG6vU9J9c9Z8Sw5+tBO6jP24YwndWfarOGMSVbW1HYqs2Whel47d0rBj/WqsPGhGyFUegvz1pGx2+N255jipLtfh9E654zIspuY2PVsYbtuUd+uOXX7lhixPF+7HLFIDh4WNNzLGFMydZW2HDLQhgTshVuNtxR0XHWoxr5TtqmMCbc+kYUrDqWWXbrCteagx4sr71RqxqlCfk4jOKvbDne+k55w40uQ5lor4+69TbQ612uGPQz0E9f5NT+okpjFbJzxWB6cS2+TWho/LOJyqunLrxxuXL/7+9+/fr2Qn8nGCx8NfJS6eyVX49U/nPswZ/iKwbJW4neuTszJMZGHjS6tR9v21chDg8GHcfvHpPnVUgW+lAEBAOCAbRDMFCv3znZ9hxzuFr7MYqieNG/fyXW9uXk/mCQ1JR25+0k++4w8aUtRj90b5vGbG0jTHxkpXkgGLQ958BhtRXHMqq1jf397HITy1GNLC7a5nYj8dcpu42nTwaZCAZPGKy4DslgsO/DO0PZcfwx69bbQHvtA8Ggr4HuTW6DQZdnDD69Mf5C8imCnWBw7meTy7ceLl08c+7nla9uLdZv3p4+K8ShzxgsfDXy0rlTV96/Om5tP6O88Jdrv3rx1JWP//GwYPDcvdcW4v4kj/90kmCAASEYEAygHYKBeoMIBpbjBVEUJW5b32jUlqT83I3vWukIBkGjJqWUH8W3r8QryO3T27LpOebukrTtOeawbf8ysR6NT3EwGGzuX7bGh9VWdm+jT/Sz7Tmm+a5cnNz50pPym8XDG1lcTKQX5WvNExisMGj8WUop3fiWoY5g0DGU/dRt32cX5bs9DPTBYPC0A00w2L8deCvR23EeEEJceOPy5BtnxcuXf/Pd65VXTwkxNP7ZxO3ps0II8czZK/9y+cqL4rl7ry0kG0y+lejOjQf1xFuJnjl75d/GHnzf7YrB2q3f3v/5aSHOzIy5HcfXuWKAQemzzilNyfxuSuoM3REM1Ot3Tnb5JfSjx3LKsKqulEtes9VxxSB8LCeGrepHUv7B89dSuGLQ03qxwFcMtlpywihX3c/lkue3Oq4YbLW6DGWiwSxdMSAYJClfE7AKyXgfioBgwJSEdggG6vU9Jw/etl5bcazkUwQ7waBUduth23PM5B3tnUvN+NbzCfk4jG9qP+IZg3ih6UtbjLqNzcNuPe85GBzWyN698qG/PJu7Zww2PcdMPkWwGwzKbiMMvC5DmWivj7r1NtDre6cYyEA/fZFT+4uKVUhxViFZ6EMR9FlnpmRxpiSyg2Cg3gDm5IEX3WzFi0ghhFV13aolRt3GRktOGUKYzqNm7Y4lhBCGVf3QrZa7/SL5jnz0gW3svrMoDBpy+7U522+hicKWnDCEMB1v67GcKAlhOd7GgcOCXteL4RGNNKVtGq/YrxgifmmPf5yXEmUkGHR9hVScB4QQ5ar7YdUyy269vVPe1ebBodzca62PuvU40HunWP1+AAP99EVO7S8qViHFWYVkoQ9F0GedmZLFmZLIDoKBeszJJ+nyhPQxDKrO+gzWYOqmBMFAx01JnY8nC30oAoIBUxLaIRiox5x8EoLB8RAMVJ5U+ZqAVUjG+1AEBAOmJLRDMFCPOZmO4gUDjREMdNyU1Pl4stCHIiAYMCWhHYKBeszJdBAMNEIw0HFTUufjyUIfioBgwJSEdggG6jEn00Ew0EgOggEOk4U6Z6EPRUAwIBhAOwQD9ZiT6SAYaIRgkGNZqHMW+lAEBAOCAbRDMFCPOZkOgoFGCAY5loU6Z6EPRUAwIBhAOwQD9ZiT6SAYaIRgkGNZqHMW+lAEBAOCAbRDMFCPOZkOgoFGCAY5loU6Z6EPRUAwIBhAOwQD9ZiT6SAYaIRgkGNZqHMW+lAEBAOCAbRDMFCPOZkOgoFGCAY5loU6H6MPbc855P8XGAbenGVLf9Cd3BOsOtaU9J/m/1XY9hzTcryg55bXPWfUls1+unkQwYBgAO0QDNRjTqaDYKARgkGOZaHOAw0GbV9OihMNBr60xeSJBIO9lpvSHiYY5GxTUmfojmCgHnMyHQQDjRAMciwLde65DxsNOWsJIUS5Un3FMB2vveV7n1QtQwghRMmee9Rcdcy4FVv6oe/NV634Xw17btUP9zcX+o/m7JIQQhgTbn0jijYay3O2ER/+waq/FfnSFiX73h3b2G7f3/J2TjAp/Z86j48Czylb9iuWEKLsNnbP1/Yc07onl+erZSHKVVkPoigKGstO/OmS7XzRWN/t+i9te1gIIYRpy/8NGl842520neVGEDdmvFKtlIUQwprz/O9cuySEYc0ud37DY9b5RD7eQfkynWAALRAM1GNOpmNQdWawUqBkUjAT05GFOvfWhzDw5qx4BR9879olYTreT7WqUZqQj8Noy6/dsYTleOs7VwzCjdqsYUzJ1lYUtmqzZdF5heHHWnXYsOfrwU+eMyLK/+GtzlmiPFtrhWGrNls2JmSrJW0hDHu+HrQDb84So25jc+f3+luBd+D4MPAcS1hzXrB/hd72HLOjnb95zkgcJ0J/edYyLWc1OHjFIFh1rGF77pEfxl9wxPHW255jitKEfByGdbdsCGNKtrbChlsWT7goQTAgGEA7BAP1mJPpIBhohGCQY1moc299CDzHMqq1jSiK4kV/x0Lfl/a+YJDU9uVkZzBoe45pJm7X2Wy4o3sfjNfo3yzaYrha+zGKomijVjUsxwt2gkHQ5Xh/PdHJjnPtrtqb0i6VP/zonrnT8m73mp3BoO05pjFb2wh3Pmiajre59x8TNenhbiWCAcEA2iEYqMecTAfBQCMEgxzLQp17Dwa7a/udZwzCoPFnKaV041uGOoLBRqO2JOXnbrUshBDmu3Jxcuck8aI/uZIOPMfa3xHLke7eMbsr70QG6Dze+9tOJ9u+TJyrueKYu48lBJ5jmbY9mjj79tfpDAb/sz/PbFdgc+/5ikRNCAaZ35TUGbojGKjHnEzHoOrMYKVAyaRgJqYjC3XurQ9drhisPpYTRrnqfi6XPL/VccVgqyWnDKvqSrnkNVtPvmIQdPll//ZViEODwYGLA/vSy/5zDfSKgf7BAIehzkgiGKjHnEwHwUAjBIMcy0Kde+tDl2cMVlYcM/kUwW4wKLuNMPAcy5iQrTAK/eVZyzj8GYPNlpwyjH/6r2XH2n5Gecuv3bGM2Vr994cEg1G38X+BN9d5/MbG4cFAGBOytf2owBHPGIy6jc3t8ODWw8OeMSAY5Bd1RhLBQD3mZDoIBhohGORYFurccx8OvJVoK84DQohy1f2wapllt95uyQlDCNNZbS7Pxi8ssqquW91+dDgh8VaieH2/91YiYVXnPT/sesUgfCwnSkJYjtfqPP7IKwb35B/m7NLe+5GCuozvcYrfShSEiZZ/asmp+EusN+T2a5eSbyUiGOQXdUYSwUA95mQ6BlVnBisFSiYFMzEdWahzFvpQBAQDLVBnJBEM1GNOpoNgoBGCQY5loc5Z6EMREAy0QJ2RRDBQjzmZDoKBRggGOZaFOmehD0VAMNACdUYSwUA95mQ6CAYaIRjkWBbqnIU+FAHBQAvUGUkEA/WYk+kgGGiEYJBjWahzFvpQBAQDLVBnJBEM1GNOpoNgoBGCQY5loc5Z6EMREAy0QJ2RRDBQjzmZDoKBRggGOZaFOmehD0VAMNACdUYSwUA95mQ6CAYaIRjkWBbqnIU+FAHBQAvUGUkEA/WYk+kgGGiEYJBjWahzFvpQBAQDLVBnJBEM1GNOpoNgoBGCQY5loc5Z6EMREAy0QJ2RRDBQjzmZDoKBRggGOZaFOmehD0VAMNACdUYSwUA95mQ6CAYaIRjkWBbqnIU+FAHBQAvUGUkEA/UEVGC8NDLA6cbIZk06g8tYZwHDpIWTmHHQCMFAPdV/CBQU46WRAU43RjZr0hlcxjoLGCYtnMSMg0YIBioI0bHtm5NPuTfSfO8xvvJACtI5EE8xekjbSc1ERjYD0hlcxjoLGCYtnMSMg0YIBpmg+s+BImKwNDLAucbIZk06g8tYZwHDpIWTmHHQCMEgE1T/OVBEDJZGBjjXGNxMSW1kGWvlGCYtDHaWQUcEg7yZXlwr4Ka66gAAANojGOSN8jU6wQAAAEBHBIO8Ub5GJxgAAADoiGCQN8rX6AQDAAAAHREM8kb5Gp1gAAAAoCOCQd4oX6MTDAAAAHREMMgb5Wt0ggEAAICOCAZ5o3yNTjAAAADQEcEgb5Sv0QkGAAAAOiIY5I3yNTrBAAAAQEcEg7xRvkYnGAAAAOiIYJA3ytfoBAMAAAAdEQzyRvkanWAAAACgI4JB3ihfoxMMAAAAdEQwyBvla3SCAQAAgI4IBnmjfI1OMAAAANARwSBvlK/RCQYAAAA6IhjkjfI1OsEAAABARwSDvFG+RicYAAAA6IhgkC4humw97u16wJF79y2duzWu9d7uBxyvXAAAAIVHMAAAAABAMAAAAABAMAAAAAAQEQwAAAAARAQDAAAAABHBAAAAAEBEMAAAAAAQEQwAAAAARAQDAAAAABHBAAAAAEBEMAAAAAAQEQwAAAAARL0EAwAAAAC5RzAAAAAAQDAAAAAAQDAAAAAAcJ1gAAAAAOA6wQAAAADAdYIBAAAAgOsEAwAAAADXr1//f+7nGH972/hrAAAAAElFTkSuQmCC" alt=""></span></p>
+<h3><span style="font-family: Microsoft YaHei;">absolute mode</span></h3>
+<p><span style="font-family: Microsoft YaHei;"><code>格式data-[offset]-[anchor] offset可以使任意整数 默认值是0 anchor可以是 start或者end</code></span></p>
+<ul>
+<li><span style="font-family: Microsoft YaHei;"><code>data-0</code> = <code>data-start</code> = <code>data-0-start</code>: 滚动条在位置0</span></li>
+<li><span style="font-family: Microsoft YaHei;"><code>data-100</code> = <code>data-100-start</code>: 滚动条滚动100px.</span></li>
+<li><span style="font-family: Microsoft YaHei;"><code>data--100</code> = <code>data--100-start</code>:&nbsp;滚动条滚动-100px. (这个看起来是没有意义的，但是在relative mode里面会用到).</span></li>
+<li><span style="font-family: Microsoft YaHei;"><code>data-end</code> = <code>data-0-end</code>: 滚动条距离底部为0的时候.</span></li>
+<li><span style="font-family: Microsoft YaHei;"><code>data-100-end</code>: 100px 滚动条距离底部为100px的时候.</span></li>
+<li><span style="font-family: Microsoft YaHei;"><code>data--100-end</code>: 滚动条距离底部为-100px的时候</span></li>
+
+
+
+
+
+
+
+
+
+
+</ul>
+<h3><span style="font-family: Microsoft YaHei;">relative mode</span></h3>
+<p><span style="font-family: Microsoft YaHei;">格式<code>data-[offset]-(viewport-anchor)-[element-anchor] <code>offset可以使任意整数 默认值是0 <code>viewport-anchor表示视口的底部或者顶部可以是top、<code>center</code> 或者 bottom <code>element-anchor</code>表示相对元素的顶部或者底部 可以是top、<code>center</code> 或者 bottom</code></code></code></span></p>
+<ul>
+<li><span style="font-family: Microsoft YaHei;"><code>data-top</code> = <code>data-0-top</code> = <code>data-top-top</code> = <code>data-0-top-top</code>: 当参照元素的顶部和视口顶部对齐.</span></li>
+<li><span style="font-family: Microsoft YaHei;"><code>data-100-top</code> = <code>data-100-top-top</code>: 当参照元素的顶部距离视口顶部100px.</span></li>
+<li><span style="font-family: Microsoft YaHei;"><code>data--100-top</code> = <code>data--100-top-top</code>: 当参照元素的顶部距离视口顶部-100px.</span></li>
+<li><span style="font-family: Microsoft YaHei;"><code>data-top-bottom</code>= <code>data-0-top-bottom</code>: 当参照元素的底部在视口底部对齐.</span></li>
+<li><span style="font-family: Microsoft YaHei;"><code>data-center-center</code> = <code>data-0-center-center</code>: 当参照元素的中部在视口的中间.</span></li>
+<li><span style="font-family: Microsoft YaHei;"><code>data-bottom-center</code> = <code>data-0-bottom-center</code>: 当参照元素和视口的底部对齐.</span></li>
+
+
+
+
+
+
+
+
+
+
+</ul>
+<p><span style="font-family: Microsoft YaHei;">有时候你可能需要参照另一个元素来确定关键帧你需要用到<code> </code>data-anchor-target</span></p>
+<p><span style="font-family: Microsoft YaHei;"><code>&lt;div data-anchor-target="#foo"<code></code>&gt;&lt;/div&gt;<br></code><code></code></span></p>
+<p><span style="font-family: Microsoft YaHei;"><a href="http://prinzhorn.github.io/skrollr/examples/anchor_target.html" target="_blank">View in browser</a></span></p>
+<p><span style="font-family: Microsoft YaHei;">如果文档结构有变化需要调用 refresh() 函数</span></p>
+<p><span style="font-family: Microsoft YaHei;">&nbsp;</span></p>
+<p><span style="font-family: Microsoft YaHei;"><strong>&nbsp;absolute mode 和 relative mode 的offset也可是是百分</strong>比 写法是&lt;div data-_foobar="left:0%;" data-10p="left:50%;" data-30p="left:100%;"&gt;&lt;/div&gt;</span></p>
+<p><span style="font-family: Microsoft YaHei;">分别表示滚动条滚动视口的10% 和 30%</span></p>
+<p><span style="font-family: Microsoft YaHei;"><strong>&nbsp;absolute mode 和 relative mode 的offset前面都是可以放一个常量的</strong>，但是这个常量需要一个标识符使用的时候需要在这个标识符前面加下划线：</span></p>
+<p><span style="font-family: Microsoft YaHei;">定义：skrollr.init({</span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp;&nbsp; constants: {</span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foobar: 1337</span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp;&nbsp; }</span><br><span style="font-family: Microsoft YaHei;">});</span></p>
+<p><span style="font-family: Microsoft YaHei;">调用：</span></p>
+<p><span style="font-family: Microsoft YaHei;">&lt;div data-_foobar="left:0%;" data-_foobar--100="left:50%;" data-_foobar-100="left:100%;"&gt;&lt;/div&gt;</span><br><br><span style="font-family: Microsoft YaHei;">&lt;!--Equal to--&gt;</span><br><br><span style="font-family: Microsoft YaHei;">&lt;div data-1337="left:0%;" data-1237="left:50%;" data-1437="left:100%;"&gt;&lt;/div&gt;</span></p>
+<p><span style="font-family: Microsoft YaHei;">&nbsp;</span></p>
+<h2><span style="font-family: Microsoft YaHei;">添加Class</span></h2>
+<p><span style="font-family: Microsoft YaHei;">skrollr会自动html标签添加class<code>"<code></code>skrollr"<code></code>并且会移除 class "<code></code><code>no-skrollr"<code></code>（如果存在的话）还会根据检测结果添加class <code>"<code></code>skrollr-desktop"<code></code></code>或者<code>"<code></code>skrollr-mobile"<code></code>以表明运行的平台<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATsAAAAZCAIAAADBrR4ZAAAFFklEQVR4nO2cwW7cNhCG5y30GDzoIfYpeNE7LOCjj6uLfKt9yZ7qU3sQ2lWBGAWCtlsYcFIYaZUiNDZx0wStFq2RwDCcuHE9PVCiaImSyLVsa9P5IAgyl6SG4vwaUhINSBDE+gD3bQBBEA60KTYJvxJ3ZshdsPBhK0mf+LD9abXrU+V++2u1s1dKLcJw3q9ZjYpNwt0gnCNixNFjmLlXHTAEwCB0KrQM2BbAJOi7nVi0KAl3o3hhzsF9ZIF7xRkyDwEwTJpTVmIg9nAfwXfIvIrNBrr76369xa6U0lFfmBUr4pl+mpFJsRHHznuPiF0Vazh7TyzCcJ6l83FbzWJ1b4ujqh7qKc4MxJ4M2cg6c4PNnDue1Ka/EO/TW2xLucq+HYNiRTzz+UxPMSrWh+EqNuLbABO1Wdc2EIUMzZ6bK1Y4RGlH7s9b3E7Rl2iriq3LFRFHDEcMAfLhsYgRIN98jogYMGQMAfJ9FKvaOhQr4ln9MlX6QF1QlZiEuzLFY7tZQ4oVYZA3I3eywtu4jwAYi/wgTMoDvZQugHaFGOsZlD3yQG2VmpXe4qh6rk6bVREA5FG1lKyH+8hG+dDd8SbV7i0R3/bYgxHbMnoLwKTu7Y1U2u5oc1+iNcbYvSRd6ik+YJIiIgasjKv6sVSm2lsqNkvnLL+Iy4A90Gor+0AbYyxGReYx/0Je+oh/LswpNmTIx/lhPmaT3iZKx8Kin+Ki1jQpf+UjTLMyW3tMq9QzfHvSpHBEFWM1S8IxppmtzZUobbBZIHi58WHQepWqdHmLfBS01Hys/Inby9XQdmVz9xgkS+fTW4qxiIi4DNhnumjVqLhFsVF8ba/SWxTbNJ6ppNfjZ5bOPZhA3hOGFNtxTpogQOkrKPJBQkUhuqPr/qT/ZKOQzkHpoOwpMxQeqUdLpXYbmys+bbBZG0s7jt67vKW80auooPLIoGflLYa2i9odzYwWmXqg6VnxtaDXolgR5/sVFKu3RA/seh9oj9rKW2PxxFzdWeopNgjNI1lx1/QRm2Ug/yzjg9+YzViwwxEHZk8ZCQsz9NjoZHOp+bjBZk2xN4ixRm+pKdYptBYY226lWGVAP7S8j13Id0oRz1/SJGE5ccUiXc1jPYYjbZ8Vb3fk1tQD6m5XTCfy5/UAE4BtUQZPfdZR5vHKzthyn8cW7zzUPERN6uQsi0fa7E57cFKdN2r15NlqKcZ6hm6PqtlD5uX+WoaaWs1NNktketM8FoVhrttNt7fI+CnfuCg304Kqy7vWStubWnqNRe8vk+mbJ2II3OCpuOuZtJgs4lmP713uBlIsMQAqEfh2WW1ENhRIsQSxTpBiCWKdIMUSxDpBiiWIdYIUSxDrhINinzx/vTnd29hJ9G1z+nA//e327CMIQsdBsZvTvbP3F1dXV5cfP158OD87fff2ZPnq1cvN6cPOsn0vju9/oTBBrAUOit3YSf69vPzn4sP52SkA/L188+frF7+//HVjp+Mr0JsvjpfIr6zUp6G3sSqKIAaOm2Lfn5+dvjs5+esPAHhzLI6Pnh49O2hXrM3ieHv0D5v7XShMEGuBm2LfnizhOj8/ftSiWMvF8fboisVeFwoTxFrgplg5DH7x/BAAfvnpu8P9vYPvv25SrM3ieNTWx6tVPnL0q6fIRQjGRQUkWuJ/hZtij4+eHqUHzw5/AIDH82/2H8U/fvtla4ztXhyv/gFQEmKSYpbiuBCqDMhZisy03A97XShMEGvBf1wQF/jX3zhAAAAAAElFTkSuQmCC" alt=""></code></code></code></span></p>
+<p><span style="font-family: Microsoft YaHei;">会给关键帧添加 class e <code>"<code></code>skrollable-before"<code></code></code>,<code>"<code></code>skrollable-between"<code></code></code> <strong><code>或者"<code></code></code></strong><code>skrollable-after"<code></code></code> skrollr会根据关键帧所在的位置确定添加哪一个</span></p>
+<h2><span style="font-family: Microsoft YaHei;">动态改变属性</span></h2>
+<p><span style="font-family: Microsoft YaHei;">从skrollr 0.6.24开始你可以skrollr改变属性值用法和css一样只需要在属性前面加上"@"符号：</span></p>
+<p><span style="font-family: Microsoft YaHei;">&lt;polygon</span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp;&nbsp; points='426,720&nbsp;&nbsp; -200,720&nbsp;&nbsp; -200,0&nbsp;&nbsp; 955,0'</span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp;&nbsp; data-0="@points:426,720&nbsp;&nbsp; -200,720&nbsp;&nbsp; -200,0&nbsp;&nbsp; 955,0"</span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp;&nbsp; data-500="@points:380,720&nbsp;&nbsp; -200,720&nbsp;&nbsp; -200,0&nbsp;&nbsp; 1302,0"&gt;</span><br><span style="font-family: Microsoft YaHei;">&lt;/polygon&gt;<span style="color: #ff0000;">注意：每次改变属性里面的数字个数必须保持一致</span></span></p>
+<h2><span style="color: #000000; font-family: Microsoft YaHei;">自动补全css属性</span></h2>
+<p><span style="color: #000000; font-family: Microsoft YaHei;">&lt;div data-100="left:0%;" data-200="top:0%;" data-300="left:50%;" data-400="top:50%;"&gt;&lt;/div&gt;相当于</span></p>
+<p><span style="color: #000000; font-family: Microsoft YaHei;">&lt;div data-100="left:0%;top:0%;" data-200="left:0%;top:0%;" data-300="left:50%;top:0%;" data-400="left:50%;top:50%;"&gt;&lt;/div&gt;</span></p>
+<p><span style="color: #000000; font-family: Microsoft YaHei;">所以不要这样写，应该每次都写出改变了的css 属性</span></p>
+<h2><span style="color: #000000; font-family: Microsoft YaHei;">注意事项</span></h2>
+<ul>
+<li><span style="color: #000000; font-family: Microsoft YaHei;">所有的数字值都需要单位0也不例外</span></li>
+<li><span style="font-family: Microsoft YaHei;">复合写法 <code>margin:0px 0px 0px 0px;对应</code> <code>margin:0px 100px 50px 3px;</code> 但是不能对应 <code>margin:10px;</code>值的数量必须保持一致，否则会出错</span></li>
+<li><span style="font-family: Microsoft YaHei;">css3 transform 里面的属性顺序必须一致 例如 rotate(0deg) translate(10px) 可以对应 rotate(0deg) translate(10px) 但是不可以写成 translate(10px) rotate(0deg)</span></li>
+<li><span style="font-family: Microsoft YaHei;">动态改变颜色不支持 名称（例如：red ，green）和 16进制色值（例如：#ff0）必须使用 rgb(),rgba(), hsl()或者 hsla() </span></li>
+<li><span style="font-family: Microsoft YaHei;">而且必须对应使用 不能第一个关键帧使用rgba()下一个就换成hsla()</span></li>
+
+
+
+
+
+</ul>
+<h2><span style="font-family: Microsoft YaHei;">参数options&nbsp;skrollr.init([options])</span></h2>
+<p><span style="font-family: Microsoft YaHei;"><strong>smoothScrolling</strong>=true在滚动条停止的时候动画不会立即停止，而是有一个过渡，这个过渡时间用<strong>smoothScrollingDuration</strong>来设定在元素上可以通过设置data-smooth-scrolling属性为on或者off来确定当前元素是否执行此缓动</span></p>
+<p><span style="font-family: Microsoft YaHei;">代码：</span></p>
+<p><span style="font-family: Microsoft YaHei;">&lt;div style="line-height:30px;font-size:20px;background:#ccc;" data-0="background:rgb(253,246,232);transform:rotate(0deg);" data-500="background:rgb(246,135,242);transform:rotate(360deg);" data-smooth-scrolling='off'&gt;&lt;div&gt;</span></p>
+<p><span style="font-family: Microsoft YaHei;">&lt;script type="text/javascript"&gt;</span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;skrollr.init({</span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;forceHeight: false,</span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;smoothScrolling:true,</span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;smoothScrollingDuration:500,</span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;easing: {</span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;vibrate: function(p) {</span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return Math.sin(p * 10 * Math.PI);</span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}</span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}</span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp; &nbsp;});</span></p>
+<h3><span style="font-family: Microsoft YaHei;">constants={}</span></h3>
+<p><span style="font-family: Microsoft YaHei;">&lt;script type="text/javascript"&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;skrollr.init({<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;forceHeight: false,<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;smoothScrolling:true,<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;smoothScrollingDuration:500,<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;easing: {<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;vibrate: function(p) {<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return Math.sin(p * 10 * Math.PI);<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}</span></p>
+<p><span style="font-family: Microsoft YaHei;">　　constants:{</span></p>
+<p><span style="font-family: Microsoft YaHei;">　　　　myconst:300</span></p>
+<p><span style="font-family: Microsoft YaHei;">　　}<br>&nbsp;&nbsp; &nbsp;});</span></p>
+<p><span style="font-family: Microsoft YaHei;">&lt;div data-_myconst&gt;&lt;/div&gt; 相当于 &lt;div data-_300&gt;&lt;/div&gt;</span></p>
+<p><span style="font-family: Microsoft YaHei;">&lt;div data-_myconst-200&gt;&lt;/div&gt;相当于&lt;div data-500&gt;&lt;/div&gt;</span></p>
+<p><span style="font-family: Microsoft YaHei;">&lt;div data-_myconst-top&gt;&lt;/div&gt;相当于&lt;div data-300-top&gt;&lt;/div&gt;</span></p>
+<p><span style="font-family: Microsoft YaHei;">注意使用的时候要在常量标识符之前<span style="color: #ff0000;">加下划线</span></span></p>
+<p><span style="font-family: Microsoft YaHei;">&nbsp;</span></p>
+<h3><span style="font-family: Microsoft YaHei;">scale=1</span></h3>
+<p><span style="font-family: Microsoft YaHei;">比例尺（这个没看太懂）貌似就是说文档默认是使用最大的关键帧来确定文档高度，文档高度加上视口高度是默认的最大高度，skrollr会尽可能的滚动上去，如果你的animation过快或者过慢可以调整这个值，如果设置了forceHeight=false这个值将会被忽略，scale也会影响constants但是scale只会在absolute mode中起作用</span></p>
+<h3><span style="font-family: Microsoft YaHei;">forceHeight=true</span></h3>
+<p><span style="font-family: Microsoft YaHei;">当你设置了data-1200而视口的滚动到文档底部还没有达到这个值的时候，会继续向下滚，设置了forceHeight=false就可以阻止它继续滚动</span></p>
+<h3><span style="font-family: Microsoft YaHei;">mobileCheck=function() {...}</span></h3>
+<p><span style="font-family: Microsoft YaHei;">这个参数是可以自己定义一个检测移动端的检测函数来覆盖默认的检测函数：</span></p>
+<p><span style="font-family: Microsoft YaHei;">function() {</span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp;&nbsp; return (/Android|iPhone|iPad|iPod|BlackBerry/i).test(navigator.userAgent || navigator.vendor || window.opera);</span><br><span style="font-family: Microsoft YaHei;">}</span></p>
+<h3><span style="font-family: Microsoft YaHei;">mobileDeceleration=0.004&nbsp;</span></h3>
+<p><span style="font-family: Microsoft YaHei;">惯性参数，在移动端滑动，抬起手指之后加速或减速1表示不使用惯性</span></p>
+<h3><span style="font-family: Microsoft YaHei;">edgeStrategy='set'</span></h3>
+<p><span style="font-family: Microsoft YaHei;">定义滚动条超过所定义的关键帧范围之外的时候元素的状态默认值是set，可能的值set，ease，reset，set和ease类似都会保持第一帧或者最后一帧的状态，只不过ease会根据easing里面定义的函数变化，reset会使元素的状态回到最初定义的（<span style="color: #ff0000;">注意：并不是第一个关键帧</span>）</span></p>
+<h3><span style="font-family: Microsoft YaHei;">skrollrBody='skrollr-body'</span></h3>
+<h3><span style="font-family: Microsoft YaHei;">&nbsp;beforerender 和 render</span></h3>
+<p><span style="font-family: Microsoft YaHei;">每一次渲染之前或之后调用的函数</span></p>
+<p><span style="font-family: Microsoft YaHei;">eg. skrollr.init({<br>&nbsp;&nbsp;&nbsp; render: function(data) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //Log the current scroll position.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; console.log(data.curTop);<br>&nbsp;&nbsp;&nbsp; }<br>});</span></p>
+<p><span style="font-family: Microsoft YaHei;">两个函数一个在渲染之前调用，一个在渲染之后调用，所需参数是一个对象，格式如下：</span></p>
+<p><span style="font-family: Microsoft YaHei;">{<br>&nbsp;&nbsp;&nbsp; curTop: 10, //the current scroll top offset<br>&nbsp;&nbsp;&nbsp; lastTop: 0, //the top value of last time<br>&nbsp;&nbsp;&nbsp; maxTop: 100, //the max value you can scroll to. curTop/maxTop will give you the current progress.<br>&nbsp;&nbsp;&nbsp; direction: 'down' //either up or down<br>}</span></p>
+<p><span style="font-family: Microsoft YaHei;">beforerender如果返回值是false的话，就会阻止渲染</span></p>
+<p><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp;&nbsp; var param={<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;curTop: 10, //the current scroll top offset<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;lastTop: 0, //the top value of last time<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;maxTop: 100, //the max value you can scroll to. curTop/maxTop will give you the current progress.<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;direction: 'down' //either up or down<br>&nbsp;&nbsp; &nbsp;}<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;skrollr.init({<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;constants:{<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;myconst:300<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;},<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;render:function(param){<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;console.log(param.maxTop)<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;console.log(document.body.offsetHeight)<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br>&nbsp;&nbsp; &nbsp;});}</span></p>
+<p><span style="font-family: Microsoft YaHei;">&nbsp;</span></p>
+<h3><span style="font-family: Microsoft YaHei;">keyframe（没看明白）</span></h3>
+<h2><span style="font-family: Microsoft YaHei;">&nbsp;easing</span></h2>
+<p><span style="font-family: Microsoft YaHei;">运动曲线，定义新的或者覆盖原有的曲线：</span></p>
+<ul>
+<li><span style="font-family: Microsoft YaHei;">linear: default 线性.</span></li>
+<li><span style="font-family: Microsoft YaHei;">quadratic: To the power of two. So 50% looks like 25%.</span></li>
+<li><span style="font-family: Microsoft YaHei;">cubic: To the power of three. So 50% looks like 12.5%</span></li>
+<li><span style="font-family: Microsoft YaHei;">begin/end: They always return 0 or 1 respectively. No animation.</span></li>
+<li><span style="font-family: Microsoft YaHei;">swing: Slow at the beginning and accelerates at the end. So 25% -&gt; 14.6%, 50% -&gt; 50%, 75% -&gt; 85.3%</span></li>
+<li><span style="font-family: Microsoft YaHei;">sqrt: Square root. Starts fast, slows down at the end.</span></li>
+<li><span style="font-family: Microsoft YaHei;">outCubic</span></li>
+<li><span style="font-family: Microsoft YaHei;">bounce: Bounces like a ball. See <a href="https://www.desmos.com/calculator/tbr20s8vd2">https://www.desmos.com/calculator/tbr20s8vd2</a> for a graphical representation.</span></li>
+</ul>
+<p><span style="font-family: Microsoft YaHei;">skrollr.init({</span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp;&nbsp; easing: {</span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //This easing will sure drive you crazy</span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wtf: Math.random,</span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; inverted: function(p) {</span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 1 - p;</span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><br><span style="font-family: Microsoft YaHei;">&nbsp;&nbsp;&nbsp; }</span><br><span style="font-family: Microsoft YaHei;">});</span></p>
+<h2><span style="font-family: Microsoft YaHei;">skrollr.get()</span></h2>
+<p><span style="font-family: Microsoft YaHei;">返回skrollr对象</span></p>
+<h3><span style="font-family: Microsoft YaHei;">refresh([elements])</span></h3>
+<p><span style="font-family: Microsoft YaHei;">刷新可以传入dom对象 ，Array, NodeList 或者jquery对象。不传入参数表示刷新所有</span></p>
+<h3><span style="font-family: Microsoft YaHei;">getScrollTop()</span></h3>
+<p><span style="font-family: Microsoft YaHei;">获取当前的scrollTop</span></p>
+<h3><span style="font-family: Microsoft YaHei;">getMaxScrollTop()</span></h3>
+<p><span style="font-family: Microsoft YaHei;">获取最大scrollTop</span></p>
+<h3><span style="font-family: Microsoft YaHei;">setScrollTop(top[, force = false])</span></h3>
+<p><span style="font-family: Microsoft YaHei; font-size: 14px;">设置当前scrollTop</span></p>
+<p><span style="font-family: Microsoft YaHei; font-size: 14px;"><code>如果force</code>=<code>true那么会直接无动画的到达设置的scrollTop默认是有动画的</code></span></p>
+<h3><span style="font-family: Microsoft YaHei;">isMobile()</span></h3>
+<p><span style="font-family: Microsoft YaHei;">返回是否运行在移动端</span></p>
+<p>&nbsp;</p>
+<p><span style="font-family: Microsoft YaHei;"><strong><span style="color: #339966;">--------------------------------------------------待续</span></strong><strong><span style="color: #339966;">待续<strong><span style="color: #339966;">待续</span></strong><strong><span style="color: #339966;">待续</span></strong><strong><span style="color: #339966;">待续--------------------------------------------------------------</span></strong></span></strong></span></p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag">标签: <a href="http://www.cnblogs.com/youzhuxiaoyao/tag/skrollr/">skrollr</a>, <a href="http://www.cnblogs.com/youzhuxiaoyao/tag/skrollr%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3/">skrollr中文文档</a>, <a href="http://www.cnblogs.com/youzhuxiaoyao/tag/skrollr%E4%B8%AD%E6%96%87%E6%95%99%E7%A8%8B/">skrollr中文教程</a>, <a href="http://www.cnblogs.com/youzhuxiaoyao/tag/skrollr.js/">skrollr.js</a>, <a href="http://www.cnblogs.com/youzhuxiaoyao/tag/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8skrollr.js/">如何使用skrollr.js</a>, <a href="http://www.cnblogs.com/youzhuxiaoyao/tag/skrollr.js%E6%80%8E%E4%B9%88%E7%94%A8/">skrollr.js怎么用</a></div>
+<div id="blog_post_info"><div id="green_channel">
+<a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(4502886,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+<a id="green_channel_follow" onclick="c_follow();" href="javascript:void(0);">关注我</a>
+<a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a><a id="green_channel_contact" href="http://msg.cnblogs.com/send/%E5%B9%BD%E7%AB%B9%E5%B0%8F%E5%A6%96" target="_blank">联系我</a>
+<a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./skrollr 中文教程 - 幽竹小妖 - 博客园_files/icon_weibo_24.png" alt=""></a>
+<a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./skrollr 中文教程 - 幽竹小妖 - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+<div id="author_profile_info" class="author_profile_info">
+<a href="http://home.cnblogs.com/u/youzhuxiaoyao/" target="_blank"><img src="./skrollr 中文教程 - 幽竹小妖 - 博客园_files/20150514135952.png" class="author_avatar" alt=""></a>
+<div id="author_profile_detail" class="author_profile_info">
+<a href="http://home.cnblogs.com/u/youzhuxiaoyao/">幽竹小妖</a><br>
+<a href="http://home.cnblogs.com/u/youzhuxiaoyao/followees">关注 - 0</a><br>
+<a href="http://home.cnblogs.com/u/youzhuxiaoyao/followers">粉丝 - 0</a>
+</div>
+</div>
+<div class="clear"></div>
+<div id="author_profile_honor"></div>
+<div id="author_profile_follow">
+    <a href="javascript:void(0);" onclick="c_follow();return false;">+加关注</a>
+</div>
+</div>
+<div id="div_digg">										
+    <div class="diggit" onclick="votePost(4502886,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">1</span>
+    </div>
+	<div class="buryit" onclick="votePost(4502886,&#39;Bury&#39;)"> 
+		<span class="burynum" id="bury_count">0</span>
+	</div>
+	<div class="clear"></div>	
+	<div class="diggword" id="digg_tips">
+    (请您对文章做出评价)
+    </div>	
+</div>
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/youzhuxiaoyao/p/4497070.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/youzhuxiaoyao/p/4497070.html" title="发布于2015-05-12 13:25">这个不错</a><br><a href="http://www.cnblogs.com/youzhuxiaoyao/p/4936876.html" class="p_n_p_prefix">» </a> 下一篇：<a href="http://www.cnblogs.com/youzhuxiaoyao/p/4936876.html" title="发布于2015-11-04 18:27">angular 服务</a><br></div>
+</div>
+
+
+		</div>
+		<div class="postDesc">posted @ <span id="post-date">2015-05-14 13:53</span> <a href="http://www.cnblogs.com/youzhuxiaoyao/">幽竹小妖</a> 阅读(<span id="post_view_count">214</span>) 评论(<span id="post_comment_count">0</span>)  <a href="http://i.cnblogs.com/EditPosts.aspx?postid=4502886" rel="nofollow">编辑</a> <a href="http://www.cnblogs.com/youzhuxiaoyao/p/4502886.html#" onclick="AddToWz(4502886);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,isLogined=false,cb_blogId=227375,cb_entryId=4502886,cb_blogApp=currentBlogApp,cb_blogUserGuid='c9828751-65f8-e411-b908-9dcfd8948a71',cb_entryCreatedDate='2015/5/14 13:53:00';loadViewCount(cb_entryId);</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" id="lnk_RefreshComments" onclick="return RefreshCommentList();">刷新评论</a><a href="http://www.cnblogs.com/youzhuxiaoyao/p/4502886.html#" onclick="return RefreshPage();">刷新页面</a><a href="http://www.cnblogs.com/youzhuxiaoyao/p/4502886.html#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="site_nav_under"><a href="http://www.cnblogs.com/" target="_blank" title="开发者的网上家园">博客园首页</a><a href="http://q.cnblogs.com/" target="_blank" title="程序员问答社区">博问</a><a href="http://news.cnblogs.com/" target="_blank" title="IT新闻">新闻</a><a href="http://home.cnblogs.com/ing/" target="_blank">闪存</a><a href="http://job.cnblogs.com/" target="_blank">程序员招聘</a><a href="http://kb.cnblogs.com/" target="_blank">知识库</a></div>
+<div id="opt_under_post"></div>
+<script type="text/javascript">
+    fixPostBodyFormat();
+</script>
+<div id="google_ad_c1" class="c_ad_block"></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="http://news.cnblogs.com/n/535812/" target="_blank">纳德拉与年轻创业者分享成功经验：要从失败中学习</a><br> ·  <a href="http://news.cnblogs.com/n/535811/" target="_blank">谷歌眼镜第二版已加入摄像头工作状态指示灯 可减少公众恐慌</a><br> ·  <a href="http://news.cnblogs.com/n/535810/" target="_blank">LG V10开卖45天 仅美国销量就已达45万台</a><br> ·  <a href="http://news.cnblogs.com/n/535809/" target="_blank">Oracle确认Java 9将推迟发布</a><br> ·  <a href="http://news.cnblogs.com/n/535808/" target="_blank">大众汽车的车联网系统选择了HTC</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="google_ad_c2" class="c_ad_block"></div>
+<div id="under_post_kb"><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/535355/" target="_blank">企业计算的终结</a><br> ·  <a href="http://kb.cnblogs.com/page/535278/" target="_blank">软件开发的核心</a><br> ·  <a href="http://kb.cnblogs.com/page/534420/" target="_blank">Linux概念架构的理解</a><br> ·  <a href="http://kb.cnblogs.com/page/527814/" target="_blank">从涂鸦到发布——理解API的设计过程</a><br> ·  <a href="http://kb.cnblogs.com/page/531834/" target="_blank">好的架构是进化来的，不是设计来的</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+$(function () {
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+});
+</script>
+</div>
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"><div id="profile_block">昵称：<a href="http://home.cnblogs.com/u/youzhuxiaoyao/">幽竹小妖</a><br>园龄：<a href="http://home.cnblogs.com/u/youzhuxiaoyao/" title="入园时间：2015-05-12">7个月</a><br>粉丝：<a href="http://home.cnblogs.com/u/youzhuxiaoyao/followers/">0</a><br>关注：<a href="http://home.cnblogs.com/u/youzhuxiaoyao/followees/">0</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="cnblogs.UserManager.FollowBlogger(&#39;c9828751-65f8-e411-b908-9dcfd8948a71&#39;)">+加关注</a></div></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2015/11/01&#39;);return false;">&lt;</a></td><td align="center">2015年12月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2016/01/01&#39;);return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" align="center" abbr="日" scope="col">日</th><th class="CalDayHeader" align="center" abbr="一" scope="col">一</th><th class="CalDayHeader" align="center" abbr="二" scope="col">二</th><th class="CalDayHeader" align="center" abbr="三" scope="col">三</th><th class="CalDayHeader" align="center" abbr="四" scope="col">四</th><th class="CalDayHeader" align="center" abbr="五" scope="col">五</th><th class="CalDayHeader" align="center" abbr="六" scope="col">六</th></tr><tr><td class="CalOtherMonthDay" align="center">29</td><td class="CalOtherMonthDay" align="center">30</td><td align="center">1</td><td align="center">2</td><td align="center">3</td><td align="center"><a href="http://www.cnblogs.com/youzhuxiaoyao/archive/2015/12/04.html"><u>4</u></a></td><td class="CalWeekendDay" align="center">5</td></tr><tr><td class="CalWeekendDay" align="center">6</td><td align="center">7</td><td align="center">8</td><td align="center">9</td><td align="center">10</td><td align="center">11</td><td class="CalWeekendDay" align="center">12</td></tr><tr><td class="CalWeekendDay" align="center">13</td><td align="center"><a href="http://www.cnblogs.com/youzhuxiaoyao/archive/2015/12/14.html"><u>14</u></a></td><td align="center">15</td><td align="center">16</td><td align="center">17</td><td align="center">18</td><td class="CalWeekendDay" align="center">19</td></tr><tr><td class="CalWeekendDay" align="center">20</td><td align="center">21</td><td align="center">22</td><td align="center">23</td><td align="center">24</td><td align="center">25</td><td class="CalWeekendDay" align="center">26</td></tr><tr><td class="CalWeekendDay" align="center">27</td><td align="center">28</td><td class="CalTodayDay" align="center">29</td><td align="center">30</td><td align="center">31</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td></tr><tr><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td><td class="CalOtherMonthDay" align="center">6</td><td class="CalOtherMonthDay" align="center">7</td><td class="CalOtherMonthDay" align="center">8</td><td class="CalOtherMonthDay" align="center">9</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script></div>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk"></div>
+<div id="widget_my_google" class="div_my_zzk"><input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk"></div>
+</div>
+</div>
+
+</div><div id="sidebar_shortcut" class="sidebar-block">
+<div class="catListLink">
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/youzhuxiaoyao/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="http://www.cnblogs.com/youzhuxiaoyao/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="http://www.cnblogs.com/youzhuxiaoyao/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="http://www.cnblogs.com/youzhuxiaoyao/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="http://www.cnblogs.com/youzhuxiaoyao/tag/" title="我的博客的标签列表">我的标签</a></li>
+<li><a id="itemListLink" onclick="this.blur();WarpClass(&#39;itemListLink&#39;, &#39;itemListLin_con&#39;);return false;" href="http://www.cnblogs.com/youzhuxiaoyao/p/4502886.html#">更多链接</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+<ul>
+
+</ul>
+</div>
+</div></div><div id="sidebar_toptags" class="sidebar-block">
+<div class="catListTag">
+<h3 class="catListTitle">我的标签</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/youzhuxiaoyao/tag/angular/">angular</a>(1)</li><li><a href="http://www.cnblogs.com/youzhuxiaoyao/tag/angular-file-upload/">angular-file-upload</a>(1)</li><li><a href="http://www.cnblogs.com/youzhuxiaoyao/tag/angular%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%8F%92%E4%BB%B6/">angular文件上传插件</a>(1)</li><li><a href="http://www.cnblogs.com/youzhuxiaoyao/tag/skrollr/">skrollr</a>(1)</li><li><a href="http://www.cnblogs.com/youzhuxiaoyao/tag/skrollr.js/">skrollr.js</a>(1)</li><li><a href="http://www.cnblogs.com/youzhuxiaoyao/tag/skrollr.js%E6%80%8E%E4%B9%88%E7%94%A8/">skrollr.js怎么用</a>(1)</li><li><a href="http://www.cnblogs.com/youzhuxiaoyao/tag/skrollr%E4%B8%AD%E6%96%87%E6%95%99%E7%A8%8B/">skrollr中文教程</a>(1)</li><li><a href="http://www.cnblogs.com/youzhuxiaoyao/tag/skrollr%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3/">skrollr中文文档</a>(1)</li><li><a href="http://www.cnblogs.com/youzhuxiaoyao/tag/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8skrollr.js/">如何使用skrollr.js</a>(1)</li><li><a href="http://www.cnblogs.com/youzhuxiaoyao/tag/%E6%8B%96%E6%8B%BD%E4%B8%8A%E4%BC%A0/">拖拽上传</a>(1)</li><li><a href="http://www.cnblogs.com/youzhuxiaoyao/tag/">更多</a></li>
+</ul>
+</div></div><div id="sidebar_categories">
+<div class="catListPostArchive">
+<h3 class="catListTitle">随笔档案</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_0_Link_0" href="http://www.cnblogs.com/youzhuxiaoyao/archive/2015/12.html">2015年12月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_1" href="http://www.cnblogs.com/youzhuxiaoyao/archive/2015/11.html">2015年11月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_2" href="http://www.cnblogs.com/youzhuxiaoyao/archive/2015/05.html">2015年5月 (2)</a> </li>
+
+</ul>
+
+</div>
+
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap" style="display: none;">
+<div class="catListComment">
+<h3 class="catListTitle">最新评论</h3>
+
+	<div id="RecentCommentsBlock"></div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock"><ul><li><a href="./skrollr 中文教程 - 幽竹小妖 - 博客园_files/skrollr 中文教程 - 幽竹小妖 - 博客园.html">1. skrollr 中文教程(215)</a></li><li><a href="http://www.cnblogs.com/youzhuxiaoyao/p/4953642.html">2. AngularJS Toaster(45)</a></li><li><a href="http://www.cnblogs.com/youzhuxiaoyao/p/4942936.html">3. angular-file-upload API  angular文件上传插件(29)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap" style="display: none;">
+<div class="catListFeedback">
+<h3 class="catListTitle">评论排行榜</h3>
+	<div id="TopFeedbackPostsBlock"></div>
+</div>
+</div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div class="RecentComment">
+	<div id="TopDiggPostsBlock"><ul><li><a href="./skrollr 中文教程 - 幽竹小妖 - 博客园_files/skrollr 中文教程 - 幽竹小妖 - 博客园.html">1. skrollr 中文教程(1)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright ©2015 幽竹小妖
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+</body></html>

@@ -1,0 +1,45 @@
+<html>
+
+<head>
+
+   <title>JS绑定快捷键</title>
+
+<script language="JavaScript" type="text/javascript">
+
+	function Hotkey(event, targetObj, ctrlKey, shiftKey, altKey, keycode)
+	{
+		if (
+		   targetObj
+		   && event.ctrlKey == ctrlKey 
+		   && event.shiftKey == shiftKey 
+		   && event.altKey == altKey 
+		   && event.keyCode == keycode
+		   )
+		   //alert("hello");
+		   var keyValue = String.fromCharCode(event.keyCode); 
+		   alert("event.keyCode = "+(event.keyCode)+"; keyValue = "+(keyValue));
+		   
+	}
+
+	function fnKeyup(event)
+	{
+		var b = document.getElementById("myButton");
+		Hotkey(event, b, true, false, false, event.keyCode);
+	}
+
+	// 捕获系统的Keyup事件
+	// 如果是Mozilla系列浏览器
+	if (document.addEventListener)
+	document.addEventListener("keyup",fnKeyup,true);
+	else
+	document.attachEvent("onkeyup",fnKeyup);
+
+</script>
+</head>
+<body>
+	<form method="get" action="no.aspx">
+		<input type="submit" id="myButton"/>
+		Ctrl + Enter
+	</form>
+</body>
+<ml>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+	<title>fullPage</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.6/jquery.fullPage.css">
+
+	<style>
+	.section2{background-color: red;}
+	</style>
+
+</head>
+<body>
+	<div id="fullpage">
+		<div class="section">页面1</div>
+		<div class="section section2">
+			<div class="slide">幻灯片1</div>
+			<div class="slide">幻灯片2</div>
+			<div class="slide">幻灯片3</div>
+			<div class="slide">幻灯片4</div>
+		</div>
+		<div class="section">页面3</div>
+		<div class="section">页面4</div>
+	</div>
+
+
+
+
+	
+
+<script src="resources/js/jquery.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.6/jquery.fullPage.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#fullpage').fullpage();
+	})
+</script>
+</body>
+</html>

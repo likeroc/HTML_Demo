@@ -1,0 +1,9 @@
+.banner-community .carousel-caption{
+	top: -25px;
+}
+.banner-community .carousel-caption h3{
+	font-style: italic;
+}
+/*.course-com .caption p:first-child{height: 80px;}*/
+.mb1{margin-bottom: 1px;}
+.study-report .img img{border-radius: 7px; }

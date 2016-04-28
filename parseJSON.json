@@ -1,0 +1,9 @@
+//parse
+var responseJSON='{"root" : {"row" : [{"device" : "3019","interface" : "SIP/3019","context" : "from-internal"}]}}'; 
+var jsondata = JSON.parse(responseJSON); 
+console.log(jsondata.root.row[0].interface);
+
+//eval。可以执行js，陌生接口谨慎使用
+var responseJSON='{"root" : {"row" : [{"device" : "3019","interface" : "SIP/3019","context" : "from-internal"}]}}'; 
+var jsondata = eval('('+responseJSON+')'); 
+console.log(jsondata.root.row[0].interface);

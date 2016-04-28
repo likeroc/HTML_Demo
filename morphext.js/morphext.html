@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+	<title>morphext</title>
+	<link rel="stylesheet" href="dist/morphext.css">
+	<link rel="stylesheet" href="dist/animate.css">
+</head>
+<body>
+	I am a <span id="js-rotating">前所未有地有效，让你开始爱上英语, 学你用得到的英语, 孩子开心，家长放心</span> Text Rotator
+
+
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.2/jquery.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
+	<script src="dist/morphext.min.js"></script>script>
+	
+	<script>
+	$(function  () {
+		$("#js-rotating").Morphext({
+		    // The [in] animation type. Refer to Animate.css for a list of available animations.
+		    animation: "fadeInUp",
+		    // An array of phrases to rotate are created based on this separator. Change it if you wish to separate the phrases differently (e.g. So Simple | Very Doge | Much Wow | Such Cool).
+		    separator: ",",
+		    // The delay between the changing of each phrase in milliseconds.
+		    speed: 3000,
+		    complete: function () {
+		        // Called after the entrance animation is executed.
+		    }
+		});
+	})
+	</script>
+</body>
+</html>
