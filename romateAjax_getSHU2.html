@@ -1,0 +1,70 @@
+
+<html>
+<head>
+	<title>通过 SCRIPT 标签调用 webcti 接口</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+
+/*使用标签 1,获取磁盘信息*/
+function webcti_getdiskinfo()
+{
+	var urlstring="http://op.juhe.cn/shanghai/university?dtype=&key=aa2be8b6070bbd8ec1add7836a85e877&callback=callback_diskinfo";
+	webcti_do(urlstring);
+}
+/*在标签 1 加载 url*/
+function webcti_do(urlstring)
+{
+	var t= Math.random();
+	urlstring=urlstring+"&random="+t;
+	if(typeof scriptBlock1 == "undefined"){
+		scriptBlock1 = document.createElement("script");
+	}else{
+		scriptBlock1.src = "";
+		document.getElementsByTagName("head")[0].removeChild(scriptBlock1);
+	}
+	scriptBlock1.src = urlstring;
+	//webcti_debug(urlstring);
+	scriptBlock1.language = "javascript";
+	scriptBlock1.setAttribute('type','text/javascript');
+	document.getElementsByTagName("head")[0].appendChild(scriptBlock1);
+}
+/*回调函数，处理磁盘接口返回数据*/
+function callback_diskinfo(data)
+{
+	var resRows=0;
+    var resText="<table border=0 width=100% >"; 
+			//返回多行数据 
+			for(i=0;i<data.result.list.length;i++){ 
+				resText=resText+"<tr align='center' clsss='altbg2'>"; 
+				resText=resText+("<TD>"+data.result.list[i].name+"</TD>"); 
+				resText=resText+("</tr>"); 
+			} 
+	document.getElementById("resdivdisk").innerHTML=resText+"</table>"; 
+
+	resText="";
+	data = null; 
+}
+
+/*输出调试信息*/
+function webcti_debug(debugstr)
+{
+	var allstr=document.getElementById("debugdiv").innerHTML;
+	document.getElementById("debugdiv").innerHTML=allstr+"<BR />"+debugstr;
+}
+
+        
+
+</script>
+</head>
+<body>
+	<br />
+	<p>
+		<button onclick="webcti_getdiskinfo()">手动获取磁盘信息(使用标签 1)</button>
+	</p>
+	<div id="resdivdisk" style="border: 1px solid ; padding:3px;" >磁盘信息调用结果</div>
+	<br />
+	<div id="debugdiv" style="border: 2px solid blue ; padding:3px;" >
+		<center>Debug Info</center>
+	</div>
+</body>
+</html>
